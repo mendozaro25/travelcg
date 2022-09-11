@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="green">
+    <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255);">Información</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+
+</ion-content>
+
+<ion-footer style="background-color: rgb(255, 255, 255); border-top-right-radius: 20%; border-top-left-radius: 20%;">
+  <div class="tabs">
+    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
+    <div class="tab-icon active" button [routerLink]="['../profile']"><ion-icon class="icon-tabs-active" name="person"></ion-icon></div>
+  </div>
+</ion-footer>

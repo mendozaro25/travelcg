@@ -1,0 +1,71 @@
+ion-content{
+  --background: url('../../../assets/image/slideImage-01.jpg') no-repeat center center/cover;
+  ion-header{
+    ion-toolbar{
+      --background: transparent;
+    }
+  }
+  ion-row{
+    margin: 10vh 0 0 5vh;
+    flex-direction: column;
+    ion-img{
+      height: 13vh;
+      width: 13vh;
+      margin-bottom: 2%;
+    }
+    ion-label, p{
+      font-size: 1.0em;
+      font-weight: bold;
+      color: var(--ion-color-white);
+      font-family: system-ui;
+      text-transform: uppercase;
+    }
+  }
+  .logo{
+    margin: 2vh 0 0 4vh;
+  }
+}
+
+ion-footer{
+  ion-list{
+    border-radius: 20px 20px 0 0;
+    ion-list-header{
+      ion-label{
+        font-weight: bold;
+        font-size: 1.4em;
+      }
+    }
+    ion-item{
+      background-color: white;
+      ion-input{
+        margin: 0 1vh;
+        font-size: 0.9em;
+      }
+      ion-label{
+        font-size: 0.9em;
+      }
+      ion-icon{
+        color: green;
+        margin: 0 1vh;
+        font-size: 1.5em;
+        font-weight: bold;
+      }
+    }
+      .error{
+        font-size: 1.0em !important;
+        color: red;
+      }
+      .text{
+        ion-text{
+          font-size: 1.2em !important;
+        }
+      }
+      ion-button{
+        margin: 5vh 0;
+        ion-text{
+          font-size: 0.9em;
+          text-transform: none;
+        }
+      }
+    }
+  }

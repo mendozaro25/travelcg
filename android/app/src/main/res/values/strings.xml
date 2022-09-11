@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Travelcg App</string>
+    <string name="title_activity_main">Travelcg App</string>
+    <string name="package_name">com.travelcg.tours</string>
+    <string name="custom_url_scheme">com.travelcg.tours</string>
+</resources>

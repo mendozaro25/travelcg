@@ -1,0 +1,96 @@
+.icon-avatar{
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+.ion-toolbar{
+  --background-color: transparent;
+  --ion-color-base: transparent !important;
+  --border-width: 0 !important;
+  &.toolbar-container{
+    --padding: 0;
+  }
+}
+
+.heading{
+  padding: 23px;
+  font-family: serif;
+
+  .h1{
+    font-size: 1.7rem;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+    color: #fff;
+    font-family: 'Segoe UI';
+  }
+}
+
+.search{
+    padding: 23px;
+    padding-top: 0;
+    position: relative;
+    ion-input{
+      border-radius: 23px;
+      height: 59px;
+      background-color: #eeeeee;
+      color: black;
+      --padding-start: 30px;
+    }
+    .icon-search{
+      position: absolute;
+      top: 7px;
+      right: 31px;
+      z-index: 2;
+      background: #138604;
+      color: #fff;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 17px;
+    }
+  }
+
+  .back{
+    font-size: 31.5px;
+    padding: 20px;
+    color: white;
+  }
+
+  .verMas{
+    color: #ffffff;
+    font-family: 'Segoe UI';
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  .sitio{
+    color: #ffffff;
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .tabs{
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    .tab-icon{
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: #b4e0ae;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon-tabs{
+        color: #138604;
+        font-size: 1.4rem;
+      }
+    }
+    .tab-icon.active{
+      background: #138604;
+      .icon-tabs-active{
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+  }

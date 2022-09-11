@@ -1,0 +1,101 @@
+ion-content {
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --padding-top: 10px;
+  ion-header {
+    height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: contain;
+    border-radius: 10px;
+    ion-toolbar {
+      padding-top: 10px;
+      --background: transparent;
+      ion-fab-button {
+        border: 3px solid rgb(255, 255, 255);
+        border-radius: 50px;
+        height: 5vh;
+        width: 5vh;
+        ion-icon {
+          font-size: 1.4rem;
+        }
+      }
+    }
+    ion-label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 15px;
+      font-weight: bold;
+      text-shadow: 1px 1px 2px grey;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    p {
+      margin-top: 2.0vh;
+      span {
+        font-size: 0.55rem !important;
+        font-weight: normal;
+      }
+    }
+  }
+  ion-segment {
+    ion-segment-button {
+      --padding-top: 10px;
+      --padding-bottom: 10px;
+      text-transform: uppercase;
+      font-weight: 700;
+      font-family: system-ui;
+    }
+  }
+  ion-row {
+    ion-text.description{
+      font-size: 1.0rem;
+      font-weight: 200;
+      font-family: system-ui;
+      color: white;
+    }
+    ion-col{
+      ion-item {
+        --background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        ion-icon {
+          font-size: 1.6rem;
+          margin-right: 15px;
+          border-radius: 50px;
+        }
+        iob-label {
+          ion-text {
+            font-size: 0.6rem;
+          }
+          p {
+            ion-text {
+              font-size: 0.9rem !important;
+              font-weight: bold;
+              text-shadow: 1px 1px 2px grey;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+ion-footer {
+  ion-button {
+    --border-radius: 10px;
+    ion-text {
+      font-size: 1.0rem;
+      font-weight: 700;
+      font-family: system-ui;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    ion-icon {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-family: system-ui;
+    }
+  }
+}

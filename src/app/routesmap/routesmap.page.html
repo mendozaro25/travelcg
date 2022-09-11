@@ -1,0 +1,28 @@
+<ion-content fullscreen="true">
+
+  <ion-header>
+    <ion-toolbar color="green">
+      <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
+        Ruta más optima
+      </ion-title>
+      <ion-buttons slot="start">
+        <ion-fab-button size="small" color="white" [routerLink]="['../sitetours', idSitio]">
+          <ion-icon name="chevron-back-outline" color="green"></ion-icon>
+        </ion-fab-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid id="map">
+  </ion-grid>
+
+  <ion-grid style="background-color: rgb(226, 233, 221);">
+    <ion-row id="indicators">
+      <h3 style="color: black; font-size: 1.1rem; font-family: system-ui; font-weight: 700; text-transform: uppercase;">
+        Indicaciones
+      </h3>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+

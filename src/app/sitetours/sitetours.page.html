@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="green">
+    <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
+      Sitios Turisticos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content fullscreen="true">
+  <div class="search">
+    <ion-searchbar
+    placeholder="Buscar..."
+    [(ngModel)]="searchTerm"
+    showCancelButton="focus"
+    cancelButtonText="Borrar"
+    animated
+    color="green"
+    style="font-family: system-ui;"
+    >
+  </ion-searchbar>
+  </div>
+
+  <div>
+    <ion-item lines="none"  *ngFor="let s of sitios | filter: searchTerm" >
+      <ion-grid>
+        <ion-row class="ion-align-items-center">
+          <ion-col size="3">
+            <ion-button color="green" fill="clear">
+              <img
+              style="border-radius: 20px; height: 50px; width: 50px; filter: contrast();"
+              [src]='s.urlSitio'>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+            <ion-label>
+              <h4>{{s.nomSitio}}</h4>
+              <h6>{{s.atencionSitio}}</h6>
+            </ion-label>
+          </ion-col>
+          <ion-col size="2">
+            <ion-label>
+              <ion-button color="green" fill="clear" [routerLink]="['../sitetours', s.idSitio]" >
+                <ion-icon slot="icon-only" name="caret-forward-outline">
+                </ion-icon>
+              </ion-button>
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </div>
+
+</ion-content>
+
+<ion-footer style="background-color: rgb(255, 255, 255);">
+  <div class="tabs">
+    <div class="tab-icon active" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs-active" name="airplane"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
+  </div>
+</ion-footer>

@@ -1,0 +1,183 @@
+.icon-avatar{
+    height: 130px;
+    width: 130px;
+    margin: 0 auto;
+  }
+  .ion-toolbar{
+    --background-color: transparent;
+    --ion-color-base: transparent !important;
+    --border-width: 0 !important;
+    &.toolbar-container{
+      --padding: 0;
+    }
+  }
+
+  .heading{
+    padding: 23px;
+    font-family: serif;
+
+    h1{
+      font-size: 1.7rem;
+      font-weight: bolder;
+      letter-spacing: 0.5px;
+      color: #fff;
+      font-family: 'Segoe UI';
+    }
+  }
+
+  .search{
+    padding: 23px;
+    padding-top: 0;
+    position: relative;
+    ion-input{
+      border-radius: 23px;
+      height: 59px;
+      color: black;
+      --padding-start: 30px;
+    }
+    .icon-search{
+      position: absolute;
+      top: 7px;
+      right: 31px;
+      z-index: 2;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 17px;
+    }
+  }
+
+  .tabs{
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    .tab-icon{
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background: #b4e0ae;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon-tabs{
+        color: #138604;
+        font-size: 1.4rem;
+      }
+    }
+    .tab-icon.active{
+      background: #138604;
+      .icon-tabs-active{
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .service{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    .tab-icon{
+      width: 70px;
+      height: 70px;
+      border-radius: 25px;
+      background: #b4e0ae;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .icon{
+        color: #138604;
+        font-size: 2.5rem;
+      }
+    }
+    .tab-icon.active{
+      background: #b4e0ae;
+      .icon-tabs-active{
+        color: #fff;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .categories{
+    display: flex;
+    padding: 26px;
+    justify-content: space-between;
+    font-family: serif;
+    font-weight: 600;
+    color: #ffffffd5;
+
+    .cat.active{
+      color: #138604;
+      font-weight: 800;
+      div{
+        width: 0;
+        margin: 0 auto;
+        padding: 3px;
+        background: #138604;
+        border-radius: 50%;
+        margin-top: 9px;
+      }
+    }
+  }
+
+  .packages{
+    padding: 23px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding-right: 0;
+    padding-top: 0;
+
+    .card{
+    position: relative;
+    display: inline-block;
+    width: 191px;
+    color: #000000;
+    padding-left: 13px;
+    border-radius: 29px;
+    margin-right: 18px;
+    max-height: 291px;
+    min-height: 291px;
+    background-size: cover;
+    }
+
+    .info{
+      position: absolute;
+      color: #fff;
+      bottom: 0;
+      margin-bottom: 35px;
+      padding-left: 8px;
+
+      h2{
+        margin-bottom: 11px;
+        font-weight: 775;
+        font-size: 1rem;
+        font-family: 'Segoe UI';
+      }
+      p{
+        display: flex;
+        color: #fff;
+        font-size: 0.7rem;
+        font-weight: 150;
+        font-family: 'Segoe UI';
+        .icon-location{
+          font-size: 0.7rem;
+          font-weight: 150;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .verMas{
+    position: absolute;
+    color: #b4e0ae;
+    top: 100px;
+    padding-left: 0px;
+    font-size: 48.5px;
+  }
+
+  .menu{
+      font-size: 31.5px;
+      padding: 20px;
+  }
