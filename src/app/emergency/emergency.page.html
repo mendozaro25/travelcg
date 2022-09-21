@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="green">
+  <ion-toolbar color="primary">
     <ion-title  style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
       Emergencias</ion-title>
     <ion-buttons slot="start">
@@ -14,8 +14,10 @@
     placeholder="Buscar..."
     [(ngModel)]="searchTerm"
     showCancelButton="focus"
+    cancelButtonText="Borrar"
     animated
-    color="green"
+    color="primary"
+    style="font-family: system-ui;"
     >
   </ion-searchbar>
   </div>
@@ -43,7 +45,7 @@
 
 </ion-content>
 
-<ion-footer style="background-color: #ffffff;">
+<ion-footer>
   <div class="tabs">
     <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
     <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>

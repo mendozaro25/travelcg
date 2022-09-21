@@ -23,7 +23,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-list lines="full">
+  <ion-list lines="none">
     <ion-list-header class="ion-margin">
       <ion-label> Iniciar Sesión </ion-label>
     </ion-list-header>
@@ -33,7 +33,7 @@
 
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating" color="white"><ion-icon name="mail"></ion-icon> Email</ion-label>
+            <ion-label position="stacked" color="white"><ion-icon name="mail"></ion-icon> Email</ion-label>
             <ion-input
               formControlName="email"
               type="email"
@@ -51,7 +51,7 @@
 
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating" color="white"><ion-icon name="lock-closed"></ion-icon>Contraseña</ion-label>
+            <ion-label position="stacked" color="white"><ion-icon name="lock-closed"></ion-icon>Contraseña</ion-label>
             <ion-input
               formControlName="password"
               type="password"
@@ -67,12 +67,12 @@
 
         </div>
 
-        <ion-button size="large" expand="block" shape="round" color="green" type="submit" name="registerSubmit"  [disabled]="!userForm.valid">
+        <ion-button size="large" expand="block" shape="round" color="primary" type="submit" name="registerSubmit"  [disabled]="!userForm.valid">
           <ion-text style="font-size: 1.0rem; font-family: system-ui; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;"> Iniciar Sesion</ion-text>
         </ion-button>
         <label class="ion-text-center" class="error">{{errorMsg}}</label>
       </form>
-      <p class="ion-text-center" style="font-weight: 500;">No estas registrado? <a (click)="goToRegistrate()" style="color: green; font-weight: 600;">Registrate</a></p>
+      <p class="ion-text-center">No estas registrado? <a (click)="goToRegistrate()">Registrate</a></p>
     </ion-item-group>
   </ion-list>
 </ion-footer>

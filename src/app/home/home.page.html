@@ -8,33 +8,33 @@
       </ion-header>
 
       <ion-content [fullscreen]="true">
-        <ion-list>
+        <ion-list lines="none">
           <ion-list-header style="font-size: 28px; color: white; font-family: system-ui; font-weight: 650;"> Travel Cg </ion-list-header>
           <ion-list-header style="font-size: 20px; color: white; font-family: system-ui; font-weight: 350;"> Hola, {{ userDetail }}</ion-list-header>
           <br>
           <ion-menu-toggle auto-hide="false">
             <ion-item button [routerLink]="['../home']" >
-              <ion-icon slot="start" name="home" color="green"></ion-icon>
+              <ion-icon slot="start" name="home" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Inicio </ion-label>
             </ion-item>
           <ion-item button [routerLink]="['../sitetours']" >
-            <ion-icon name="airplane" slot="start" color="green"></ion-icon>
+            <ion-icon name="airplane" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Sitios Turisticos </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../service']" >
-            <ion-icon name="book" slot="start" color="green"></ion-icon>
+            <ion-icon name="book" slot="start" color="primary"></ion-icon>
             <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Servicios </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../emergency']" >
-              <ion-icon name="megaphone" slot="start" color="green"></ion-icon>
+              <ion-icon name="megaphone" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Emergencias </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../information']" >
-              <ion-icon name="person" slot="start" color="green"></ion-icon>
+              <ion-icon name="person" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Mi Perfil </ion-label>
           </ion-item>
           <ion-item (click)="signOut()">
-              <ion-icon name="log-out" slot="start" color="green"></ion-icon>
+              <ion-icon name="log-out" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Salir </ion-label>
           </ion-item>
           </ion-menu-toggle>
@@ -47,11 +47,6 @@
       <ion-content fullscreen="true">
         <ion-menu-toggle color="light">
           <ion-icon name="menu-outline" class="menu"></ion-icon>
-          <ion-buttons slot="end">
-            <ion-avatar>
-              <ion-img src="../../assets/icon/logo-travelcg.png"></ion-img>
-            </ion-avatar>
-          </ion-buttons>
         </ion-menu-toggle>
         <div class="heading">
           <ion-avatar class="icon-avatar">
@@ -68,7 +63,7 @@
           [(ngModel)]="searchTerm"
           showCancelButton="focus"
           cancelButtonText="Borrar"
-          color="green"
+          color="primary"
           animated
           >
           </ion-searchbar>
@@ -83,9 +78,9 @@
 
         <div class="categories">
           <p class="cat"
-          style="margin: auto; font-size: 20px; text-transform: uppercase; font-family: 'Segoe UI';" button [routerLink]="['../sitetours']">
+          style="margin: auto; font-size: 20px; text-transform: uppercase; font-family: 'system-ui';" button [routerLink]="['../sitetours']">
           Explora los sitios turisticos
-          <ion-icon color="green" name="chevron-forward-outline" slot="end" style="font-size: 20px; font-weight: bold;"></ion-icon>
+          <ion-icon color="green" name="chevron-forward-outline" slot="end"></ion-icon>
         </p>
         </div>
         <div class="packages">
@@ -100,7 +95,7 @@
         </div>
         </div>
       </ion-content>
-      <ion-footer style="background-color: rgb(255, 255, 255);">
+      <ion-footer>
         <div class="tabs">
           <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
           <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>

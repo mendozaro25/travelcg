@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="green">
+  <ion-toolbar color="primary">
     <ion-title  style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">Servicios</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="../home" text=""></ion-back-button>
@@ -15,43 +15,44 @@
     showCancelButton="focus"
     cancelButtonText="Borrar"
     animated
-    color="green"
+    color="primary"
+    style="font-family: system-ui;"
     >
   </ion-searchbar>
 
   <ion-list>
-    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: green;">Comidas</ion-label>
+    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Comidas</ion-label>
     <ion-item *ngFor="let s of servicios | filter: searchTerm" >
       <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
       <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="green">Ver más</ion-button>
+      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
     </ion-item>
   </ion-list>
 
   <ion-list>
-        <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: green;">Hospedajes</ion-label>
+        <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Hospedajes</ion-label>
     <ion-item *ngFor="let s of serviciosHoteles | filter: searchTerm" >
       <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
       <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="green">Ver más</ion-button>
+      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
     </ion-item>
   </ion-list>
 
   <ion-list>
-    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: green;">Entretenimientos</ion-label>
+    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Entretenimientos</ion-label>
 <ion-item *ngFor="let s of serviciosEntretenimientos | filter: searchTerm" >
   <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
   <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-  <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="green">Ver más</ion-button>
+  <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
 </ion-item>
 </ion-list>
 
 <ion-list>
-  <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: green;">Compras</ion-label>
+  <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Compras</ion-label>
 <ion-item *ngFor="let s of serviciosCompras | filter: searchTerm" >
 <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
 <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-<ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="green">Ver más</ion-button>
+<ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
 </ion-item>
 </ion-list>
 
@@ -59,7 +60,7 @@
 
 </ion-content>
 
-<ion-footer style="background-color: rgb(255, 255, 255);">
+<ion-footer style="background-color: black">
   <div class="tabs">
     <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
     <div class="tab-icon active" button [routerLink]="['../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>

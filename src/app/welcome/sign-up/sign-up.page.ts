@@ -83,7 +83,9 @@ export class SignUpPage implements OnInit {
         this.userForm.reset();
         const toast = await this.toastController.create({
           message: 'Bienvenido a Travel Cg',
-          duration: 2000
+          duration: 4000,
+          icon: 'thumbs-up-sharp',
+          color: 'primary'
         });
         toast.present();
       }, _error => {

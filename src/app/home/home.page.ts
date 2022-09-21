@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { WelcomeService } from '../welcome/welcome.service';
 import { HomeService } from './home.service';
 import SwiperCore, { EffectFade, SwiperOptions } from 'swiper';
+import { ToastController } from '@ionic/angular';
 
 // install Swiper modules
 SwiperCore.use([EffectFade]);
@@ -25,8 +26,8 @@ export class HomePage implements OnInit, AfterContentChecked {
   constructor(
     private router: Router,
     private welcomeService: WelcomeService,
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    private Servicio: HomeService
+    private Servicio: HomeService,
+    private toastController: ToastController
   )
   {
     this.getSitios();
@@ -46,9 +47,16 @@ export class HomePage implements OnInit, AfterContentChecked {
 
   signOut() {
     this.welcomeService.signoutUser()
-      .then(res => {
+      .then(async res => {
         localStorage.removeItem('ingresado');
         this.router.navigateByUrl('welcome');
+        const toast = await this.toastController.create({
+          message: '¡NOS VEMOS PRONTO!',
+          duration: 4000,
+          icon: 'hand-left-sharp',
+          color: 'secondary',
+        });
+        toast.present();
       })
       .catch(error => {
         console.log(error);

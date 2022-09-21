@@ -1,4 +1,5 @@
 ion-content {
+  --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
   --padding-start: 10px;
   --padding-end: 10px;
   --padding-top: 10px;
@@ -19,6 +20,7 @@ ion-content {
         width: 5vh;
         ion-icon {
           font-size: 1.4rem;
+          color: white;
         }
       }
     }
