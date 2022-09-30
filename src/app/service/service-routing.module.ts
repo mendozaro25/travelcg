@@ -9,9 +9,22 @@ const routes: Routes = [
     component: ServicePage
   },
   {
-    path: ':idServicio',
-    loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
+    path: 'food',
+    loadChildren: () => import('./food/food.module').then( m => m.FoodPageModule)
+  },
+  {
+    path: 'hotel',
+    loadChildren: () => import('./hotel/hotel.module').then( m => m.HotelPageModule)
+  },
+  {
+    path: 'shop',
+    loadChildren: () => import('./shop/shop.module').then( m => m.ShopPageModule)
+  },
+  {
+    path: 'entertainment',
+    loadChildren: () => import('./entertainment/entertainment.module').then( m => m.EntertainmentPageModule)
   }
+
 ];
 
 @NgModule({

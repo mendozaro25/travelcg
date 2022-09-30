@@ -1,79 +1,246 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title  style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">Servicios</ion-title>
+    <ion-title
+      style="
+        font-weight: 800;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-family: system-ui;
+        font-size: 17px;
+        text-transform: uppercase;
+      "
+      >Servicios</ion-title
+    >
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="../home" text=""></ion-back-button>
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="search">
-    <ion-searchbar
-    placeholder="Buscar..."
-    [(ngModel)]="searchTerm"
-    showCancelButton="focus"
-    cancelButtonText="Borrar"
-    animated
-<<<<<<< HEAD
-<<<<<<< HEAD
-    color="green"
-=======
-    color="primary"
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
-=======
-    color="primary"
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
-    style="font-family: system-ui;"
+  <ion-card style="margin-bottom: 5%; margin-top: 5%;">
+    <img
+      style="height: 250px; width: 500px"
+      src="https://ucarecdn.com/39e0edff-7a5e-4da9-b4f7-dcf5ab90e438/"
+    />
+    <ion-card-header style="background-color: green">
+      <ion-card-title
+        style="
+          font-family: system-ui;
+          font-weight: 700;
+          color: white;
+          font-size: 25px;
+        "
+        >Restaurantes</ion-card-title
+      >
+      <ion-card-subtitle
+        style="font-family: system-ui; font-weight: 600; color: white"
+        >Disfruta de los mejores platos en los mejores restaurantes del distrito
+        azucarero, preparados con el amor casagrandino.</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content
+      style="
+        font-family: system-ui;
+        font-weight: 400;
+        background-color: #b4e0ae;
+        color: black;
+        font-size: 17px;
+      "
     >
-  </ion-searchbar>
+      <button
+        button [routerLink]="['./food']"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="
+          background-color: green;
+          color: white;
+          text-transform: uppercase;
+          font-family: system-ui;
+          font-weight: 700;
+          margin-top: 5%;
+          width: 100%;
+          padding-top: 2%;
+          padding-bottom: 2%;
+        "
+      >
+        Ver más
+      </button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Comidas</ion-label>
-    <ion-item *ngFor="let s of servicios | filter: searchTerm" >
-      <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
-      <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
-    </ion-item>
-  </ion-list>
+  <ion-card style="margin-bottom: 5%;">
+    <img
+      style="height: 250px; width: 500px"
+      src="https://ucarecdn.com/1be7645d-fa0f-42a9-96af-7cb4dca0685e/"
+    />
+    <ion-card-header style="background-color: green">
+      <ion-card-title
+        style="
+          font-family: system-ui;
+          font-weight: 700;
+          color: white;
+          font-size: 25px;
+        "
+        >Hoteles</ion-card-title
+      >
+      <ion-card-subtitle
+        style="font-family: system-ui; font-weight: 600; color: white"
+        >Hospedate en los mejores hosteles del distrito azucarero, con buenos precios y la más alta comodidad.</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content
+      style="
+        font-family: system-ui;
+        font-weight: 400;
+        background-color: #b4e0ae;
+        color: black;
+        font-size: 17px;
+      "
+    >
+      <button
+        button [routerLink]="['./hotel']"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="
+          background-color: green;
+          color: white;
+          text-transform: uppercase;
+          font-family: system-ui;
+          font-weight: 700;
+          margin-top: 5%;
+          width: 100%;
+          padding-top: 2%;
+          padding-bottom: 2%;
+        "
+      >
+        Ver más
+      </button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-        <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Hospedajes</ion-label>
-    <ion-item *ngFor="let s of serviciosHoteles | filter: searchTerm" >
-      <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
-      <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-      <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
-    </ion-item>
-  </ion-list>
+  <ion-card style="margin-bottom: 5%;">
+    <img
+      style="height: 250px; width: 500px"
+      src="https://ucarecdn.com/be3ae026-2b1b-4f3c-a8d0-026bb14e541a/"
+    />
+    <ion-card-header style="background-color: green">
+      <ion-card-title
+        style="
+          font-family: system-ui;
+          font-weight: 700;
+          color: white;
+          font-size: 25px;
+        "
+        >Entretenimiento</ion-card-title
+      >
+      <ion-card-subtitle
+        style="font-family: system-ui; font-weight: 600; color: white"
+        >Los mejores lugares de entretenimiento para disfrutar solo/a o con tu familia, desde parques recreacionales hasta discotecas.</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content
+      style="
+        font-family: system-ui;
+        font-weight: 400;
+        background-color: #b4e0ae;
+        color: black;
+        font-size: 17px;
+      "
+    >
+      <button
+        button [routerLink]="['./entertainment']"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="
+          background-color: green;
+          color: white;
+          text-transform: uppercase;
+          font-family: system-ui;
+          font-weight: 700;
+          margin-top: 5%;
+          width: 100%;
+          padding-top: 2%;
+          padding-bottom: 2%;
+        "
+      >
+        Ver más
+      </button>
+    </ion-card-content>
+  </ion-card>
 
-  <ion-list>
-    <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Entretenimientos</ion-label>
-<ion-item *ngFor="let s of serviciosEntretenimientos | filter: searchTerm" >
-  <ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
-  <ion-label class="sitio">{{s.nomServicio}}</ion-label>
-  <ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
-</ion-item>
-</ion-list>
-
-<ion-list>
-  <ion-label style="font-family: system-ui; font-weight: 800; text-align: center; font-size: 16px; color: white;">Compras</ion-label>
-<ion-item *ngFor="let s of serviciosCompras | filter: searchTerm" >
-<ion-avatar slot="start"><img src="{{s.urlServicio}}" alt="avatar"></ion-avatar>
-<ion-label class="sitio">{{s.nomServicio}}</ion-label>
-<ion-button class="verMas" [routerLink]="['/service', s.idServicio]" color="primary">Ver más</ion-button>
-</ion-item>
-</ion-list>
-
-  </div>
+  <ion-card style="margin-bottom: 5%;">
+    <img
+      style="height: 250px; width: 500px"
+      src="https://ucarecdn.com/0441e1b9-3d61-425a-b469-af9e3274d36a/"
+    />
+    <ion-card-header style="background-color: green">
+      <ion-card-title
+        style="
+          font-family: system-ui;
+          font-weight: 700;
+          color: white;
+          font-size: 25px;
+        "
+        >Compras</ion-card-title
+      >
+      <ion-card-subtitle
+        style="font-family: system-ui; font-weight: 600; color: white"
+        >LLevate un recuerdo de casa grande en sus diversas tiendas de emprendedores/as casagrandinos/as, con los mejores precios y calidad.</ion-card-subtitle
+      >
+    </ion-card-header>
+    <ion-card-content
+      style="
+        font-family: system-ui;
+        font-weight: 400;
+        background-color: #b4e0ae;
+        color: black;
+        font-size: 17px;
+      "
+    >
+      <button
+        button [routerLink]="['./shop']"
+        expand="full"
+        shape="round"
+        color="primary"
+        style="
+          background-color: green;
+          color: white;
+          text-transform: uppercase;
+          font-family: system-ui;
+          font-weight: 700;
+          margin-top: 5%;
+          width: 100%;
+          padding-top: 2%;
+          padding-bottom: 2%;
+        "
+      >
+        Ver más
+      </button>
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>
 
 <ion-footer style="background-color: black">
   <div class="tabs">
-    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
-    <div class="tab-icon active" button [routerLink]="['../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../sitetours']">
+      <ion-icon class="icon-tabs" name="airplane"></ion-icon>
+    </div>
+    <div class="tab-icon active" button [routerLink]="['../service']">
+      <ion-icon class="icon-tabs-active" name="book"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../home']">
+      <ion-icon class="icon-tabs" name="home"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../emergency']">
+      <ion-icon class="icon-tabs" name="megaphone"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../profile']">
+      <ion-icon class="icon-tabs" name="person"></ion-icon>
+    </div>
   </div>
 </ion-footer>

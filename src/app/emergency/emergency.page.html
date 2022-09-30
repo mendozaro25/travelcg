@@ -16,21 +16,13 @@
     showCancelButton="focus"
     cancelButtonText="Borrar"
     animated
-<<<<<<< HEAD
-<<<<<<< HEAD
-    color="green"
-=======
     color="primary"
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
-=======
-    color="primary"
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
-    style="font-family: system-ui;"
+    style="margin-top: -2%; margin-bottom: 5%;"
     >
   </ion-searchbar>
   </div>
 
-      <ion-card *ngFor="let e of emergencias | filter: searchTerm">
+      <ion-card *ngFor="let e of emergencias | filter: searchTerm" style="margin-bottom: 5%;">
         <img style="height: 250px; width: 500px;" src="{{e.url}}" />
         <ion-card-header style="background-color: green;">
           <ion-card-subtitle style="font-family: system-ui; font-weight: 600; color: white;">{{e.ubicacion}}</ion-card-subtitle>

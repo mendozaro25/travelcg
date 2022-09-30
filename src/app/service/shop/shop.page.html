@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
-      Sitios Turisticos</ion-title>
+      Compras</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+      <ion-back-button defaultHref="/service" text=""></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -17,13 +17,13 @@
     cancelButtonText="Borrar"
     animated
     color="primary"
-    style="margin-top: 3%; margin-bottom: -2%;"
+    style="font-family: system-ui;"
     >
   </ion-searchbar>
   </div>
 
   <div>
-    <ion-item lines="none"  *ngFor="let s of sitios | filter: searchTerm" >
+    <ion-item lines="none"  *ngFor="let s of serviciosCompras | filter: searchTerm" >
       <ion-grid>
         <ion-row class="ion-align-items-center">
           <ion-col size="3">
@@ -35,13 +35,13 @@
           </ion-col>
           <ion-col size="7">
             <ion-label>
-              <h4>{{s.nomSitio}}</h4>
-              <h6>{{s.atencionSitio}}</h6>
+              <h4>{{s.nomServicio}}</h4>
+              <h6>{{s.desServicio}}</h6>
             </ion-label>
           </ion-col>
           <ion-col size="2">
             <ion-label>
-              <ion-button color="primary" fill="clear" [routerLink]="['../sitetours', s.idSitio]" >
+              <ion-button color="primary" fill="clear" [routerLink]="['../../service', s.idServicio]" >
                 <ion-icon slot="icon-only" name="caret-forward-outline">
                 </ion-icon>
               </ion-button>
@@ -56,8 +56,8 @@
 
 <ion-footer>
   <div class="tabs">
-    <div class="tab-icon active" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs-active" name="airplane"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
+    <div class="tab-icon active" button [routerLink]="['../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
     <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
     <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
     <div class="tab-icon" button [routerLink]="['../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>

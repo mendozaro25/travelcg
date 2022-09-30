@@ -7,7 +7,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen="true">
   <div class="main_content_div">
 
     <div class="user_div">
@@ -16,7 +16,7 @@
         <ion-label class="email">{{email}}</ion-label>
       </div>
 
-      <div class="user_back" [style.backgroundImage]="'url(../../assets/icon/avatar.png)'"></div>
+      <div class="user_back" [style.backgroundImage]="'url(../../assets/icon/logo-travelcg.png)'"></div>
 
     </div>
 
@@ -67,18 +67,13 @@
         </ion-grid>
       </div>
 
-      <div class="list_div">
-        <ion-label>Editar Perfil</ion-label>
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </div>
-
       <div class="list_div" button [routerLink]="['../sitetours']">
         <ion-label>Lista de Sitios</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
 
-      <div class="list_div">
-        <ion-label>Mis Sitios Favoritos</ion-label>
+      <div class="list_div" button [routerLink]="['../service']">
+        <ion-label>Lista de Servicios</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
 

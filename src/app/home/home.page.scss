@@ -1,41 +1,41 @@
-.icon-avatar{
+.icon-avatar {
   height: 130px;
   width: 130px;
   margin: 0 auto;
 }
-.ion-toolbar{
+.ion-toolbar {
   --background-color: transparent;
   --ion-color-base: transparent !important;
   --border-width: 0 !important;
-  &.toolbar-container{
+  &.toolbar-container {
     --padding: 0;
   }
 }
 
-.heading{
+.heading {
   padding: 23px;
   font-family: serif;
 
-  h1{
+  h1 {
     font-size: 1.7rem;
     font-weight: bolder;
     letter-spacing: 0.5px;
     color: #fff;
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
   }
 }
 
-.search{
+.search {
   padding: 23px;
   padding-top: 0;
   position: relative;
-  ion-input{
+  ion-input {
     border-radius: 23px;
     height: 59px;
     color: black;
     --padding-start: 30px;
   }
-  .icon-search{
+  .icon-search {
     position: absolute;
     top: 7px;
     right: 31px;
@@ -46,11 +46,11 @@
   }
 }
 
-.tabs{
+.tabs {
   padding: 12px;
   display: flex;
   justify-content: space-between;
-  .tab-icon{
+  .tab-icon {
     width: 50px;
     height: 50px;
     border-radius: 25px;
@@ -58,25 +58,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .icon-tabs{
+    .icon-tabs {
       color: #138604;
       font-size: 1.4rem;
     }
   }
-  .tab-icon.active{
+  .tab-icon.active {
     background: #138604;
-    .icon-tabs-active{
+    .icon-tabs-active {
       color: #fff;
       font-size: 1.4rem;
     }
   }
 }
 
-.service{
+.service {
   padding: 20px;
   display: flex;
   justify-content: space-between;
-  .tab-icon{
+  .tab-icon {
     width: 70px;
     height: 70px;
     border-radius: 25px;
@@ -84,21 +84,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .icon{
+    .icon {
       color: #138604;
       font-size: 2.5rem;
     }
   }
-  .tab-icon.active{
+  .tab-icon.active {
     background: #b4e0ae;
-    .icon-tabs-active{
+    .icon-tabs-active {
       color: #fff;
       font-size: 1.4rem;
     }
   }
 }
 
-.categories{
+.categories {
   display: flex;
   padding: 26px;
   justify-content: space-between;
@@ -106,10 +106,10 @@
   font-weight: 600;
   color: #ffffffd5;
 
-  .cat.active{
+  .cat.active {
     color: #138604;
     font-weight: 800;
-    div{
+    div {
       width: 0;
       margin: 0 auto;
       padding: 3px;
@@ -120,7 +120,7 @@
   }
 }
 
-.packages{
+.packages {
   padding: 23px;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -128,39 +128,39 @@
   padding-right: 0;
   padding-top: 0;
 
-  .card{
-  position: relative;
-  display: inline-block;
-  width: 191px;
-  color: #000000;
-  padding-left: 13px;
-  border-radius: 29px;
-  margin-right: 18px;
-  max-height: 291px;
-  min-height: 291px;
-  background-size: cover;
+  .card {
+    position: relative;
+    display: inline-block;
+    width: 191px;
+    color: #000000;
+    padding-left: 13px;
+    border-radius: 29px;
+    margin-right: 18px;
+    max-height: 291px;
+    min-height: 291px;
+    background-size: cover;
   }
 
-  .info{
+  .info {
     position: absolute;
     color: #fff;
     bottom: 0;
     margin-bottom: 35px;
     padding-left: 8px;
 
-    h2{
+    h2 {
       margin-bottom: 11px;
       font-weight: 775;
       font-size: 1rem;
-      font-family: 'Segoe UI';
+      font-family: "Segoe UI";
     }
-    p{
+    p {
       display: flex;
       color: #fff;
       font-size: 0.7rem;
       font-weight: 150;
-      font-family: 'Segoe UI';
-      .icon-location{
+      font-family: "Segoe UI";
+      .icon-location {
         font-size: 0.7rem;
         font-weight: 150;
         margin-right: 5px;
@@ -169,7 +169,7 @@
   }
 }
 
-.verMas{
+.verMas {
   position: absolute;
   color: #b4e0ae;
   top: 100px;
@@ -177,44 +177,39 @@
   font-size: 48.5px;
 }
 
-.menu{
-    font-size: 31.5px;
-    padding: 20px;
-    color: white;
+.menu {
+  font-size: 35.5px;
+  padding: 20px;
+  color: white;
 }
 
-<<<<<<< HEAD
-ion-app{
+ion-app {
   --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
-  ion-menu{
+  ion-menu {
     --ion-background-color: black;
-    ion-header{
+    ion-header {
       --ion-background-color: black;
     }
   }
-  ion-footer{
+  ion-footer {
     background-color: black;
-=======
-  .menu{
+    .menu {
       font-size: 31.5px;
       padding: 20px;
       color: white;
-  }
+    }
 
-  ion-app{
-    --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
-    ion-menu{
-      --ion-background-color: black;
-      ion-header{
+    ion-app {
+      --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
+      ion-menu {
         --ion-background-color: black;
+        ion-header {
+          --ion-background-color: black;
+        }
+      }
+      ion-footer {
+        background-color: black;
       }
     }
-    ion-footer{
-      background-color: black;
-    }
-<<<<<<< HEAD
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
-=======
->>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
   }
 }
