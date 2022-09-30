@@ -3,7 +3,11 @@ import { Router } from '@angular/router';
 import { WelcomeService } from '../welcome/welcome.service';
 import SwiperCore, { EffectFade, SwiperOptions } from 'swiper';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { SitetoursService } from '../sitetours/sitetours.service';
+=======
+import { ToastController } from '@ionic/angular';
+>>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
 =======
 import { ToastController } from '@ionic/angular';
 >>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
@@ -30,8 +34,13 @@ export class HomePage implements OnInit, AfterContentChecked {
     private router: Router,
     private welcomeService: WelcomeService,
 <<<<<<< HEAD
+<<<<<<< HEAD
     // eslint-disable-next-line @typescript-eslint/naming-convention
     private Servicio: SitetoursService
+=======
+    private Servicio: HomeService,
+    private toastController: ToastController
+>>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
 =======
     private Servicio: HomeService,
     private toastController: ToastController
