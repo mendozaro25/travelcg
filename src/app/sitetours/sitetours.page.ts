@@ -15,27 +15,14 @@ export class SitetoursPage implements OnInit {
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   constructor(private Servicio: SitetoursService) {
-    this.getSitios();
   }
 
   ngOnInit() {
-  }
-
-  getSitios(){
-    this.Servicio.getSitios().subscribe((res: any) => {
-      console.log('Sitios correctamente', res);
-      this.sitios = res;
-    }, (error: any) => {
-      console.log('Error', error);
-    });
+    this.sitios = this.Servicio.getSitios();
+    console.log(this.sitios);
   }
 
   ionViewWillEnter(){
-    this.Servicio.getSitios().subscribe((res: any) => {
-      console.log('Sitios correctamente', res);
-      this.sitios = res;
-    }, (error: any) => {
-      console.log('Error', error);
-    });
+    this.sitios = this.Servicio.getSitios();
   }
 }

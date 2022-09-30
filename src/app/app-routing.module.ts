@@ -35,11 +35,6 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
-    path: 'information',
-    loadChildren: () => import('./information/information.module').then( m => m.InformationPageModule),
-    canActivate: [IngresadoGuard]
-  },
-  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
     canActivate: [IngresadoGuard]

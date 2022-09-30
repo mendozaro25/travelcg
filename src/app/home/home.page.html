@@ -8,7 +8,7 @@
       </ion-header>
 
       <ion-content [fullscreen]="true">
-        <ion-list>
+        <ion-list lines="none">
           <ion-list-header style="font-size: 28px; color: white; font-family: system-ui; font-weight: 650;"> Travel Cg </ion-list-header>
           <ion-list-header style="font-size: 20px; color: white; font-family: system-ui; font-weight: 350;"> Hola, {{ userDetail }}</ion-list-header>
           <br>
@@ -47,11 +47,6 @@
       <ion-content fullscreen="true">
         <ion-menu-toggle color="light">
           <ion-icon name="menu-outline" class="menu"></ion-icon>
-          <ion-buttons slot="end">
-            <ion-avatar>
-              <ion-img src="../../assets/icon/logo-travelcg.png"></ion-img>
-            </ion-avatar>
-          </ion-buttons>
         </ion-menu-toggle>
         <div class="heading">
           <ion-avatar class="icon-avatar">
@@ -83,9 +78,9 @@
 
         <div class="categories">
           <p class="cat"
-          style="margin: auto; font-size: 20px; text-transform: uppercase; font-family: 'Segoe UI';" button [routerLink]="['../sitetours']">
+          style="margin: auto; font-size: 20px; text-transform: uppercase; font-family: 'system-ui';" button [routerLink]="['../sitetours']">
           Explora los sitios turisticos
-          <ion-icon color="green" name="chevron-forward-outline" slot="end" style="font-size: 20px; font-weight: bold;"></ion-icon>
+          <ion-icon color="green" name="chevron-forward-outline" slot="end"></ion-icon>
         </p>
         </div>
         <div class="packages">
@@ -100,7 +95,7 @@
         </div>
         </div>
       </ion-content>
-      <ion-footer style="background-color: rgb(255, 255, 255);">
+      <ion-footer>
         <div class="tabs">
           <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
           <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>
@@ -113,6 +108,3 @@
   </ion-split-pane>
 
 </ion-app>
-
-
-

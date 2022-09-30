@@ -1,17 +1,17 @@
-<ion-content [fullscreen]="true" color="ligth">
+<ion-header>
+  <ion-toolbar color="green">
+    <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
+      Imagen en 360°
+    </ion-title>
+    <ion-buttons slot="start">
+      <ion-fab-button size="small" color="green" [href]="['../../../sitetours/'+ datos.idSitio]">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
-  <ion-header>
-    <ion-toolbar color="green">
-      <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
-        Imagen en 360°
-      </ion-title>
-      <ion-buttons slot="start">
-        <ion-fab-button size="small" color="white" [href]="['../../../sitetours/'+ idSitio]">
-          <ion-icon name="chevron-back-outline" color="green"></ion-icon>
-        </ion-fab-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true">
 
   <iframe width="380px" height="770px" allowFullScreen="true"
   allow="accelerometer; magnetometer; gyroscope"

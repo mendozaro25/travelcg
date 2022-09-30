@@ -1,8 +1,8 @@
 import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WelcomeService } from '../welcome/welcome.service';
-import { HomeService } from './home.service';
 import SwiperCore, { EffectFade, SwiperOptions } from 'swiper';
+import { SitetoursService } from '../sitetours/sitetours.service';
 
 // install Swiper modules
 SwiperCore.use([EffectFade]);
@@ -26,13 +26,16 @@ export class HomePage implements OnInit, AfterContentChecked {
     private router: Router,
     private welcomeService: WelcomeService,
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    private Servicio: HomeService
+    private Servicio: SitetoursService
   )
   {
-    this.getSitios();
   }
 
   ngOnInit() {
+    this.sitios = this.Servicio.getSitios();
+    console.log(this.sitios);
+    this.sitios = this.Servicio.getSitios();
+    console.log(this.sitios);
     this.welcomeService.userDetails().subscribe(response => {
       if (response !== null) {
         this.userDetail = response.email;
@@ -65,22 +68,9 @@ export class HomePage implements OnInit, AfterContentChecked {
     };
   }
 
-  getSitios(){
-    this.Servicio.getSitios().subscribe((res: any) => {
-      console.log('Sitios correctamente', res);
-      this.sitios = res;
-    }, (error: any) => {
-      console.log('Error', error);
-    });
-  }
-
   ionViewWillEnter(){
-    this.Servicio.getSitios().subscribe((res: any) => {
-      console.log('Sitios correctamente', res);
-      this.sitios = res;
-    }, (error: any) => {
-      console.log('Error', error);
-    });
+    this.sitios = this.Servicio.getSitios();
+    console.log(this.sitios);
   }
 
 }

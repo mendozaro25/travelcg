@@ -27,8 +27,9 @@
 
 .search{
   padding: 23px;
-  padding-top: 0;
+  padding-top: 1;
   position: relative;
+  padding-bottom: 0;
   ion-input{
     border-radius: 23px;
     height: 59px;
@@ -179,4 +180,12 @@
   text-transform: uppercase;
   font-size: 15px;
   font-weight: 700;
+}
+
+ion-content{
+  --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
+}
+
+ion-footer{
+  background-color: black;
 }

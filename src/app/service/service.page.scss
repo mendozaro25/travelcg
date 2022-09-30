@@ -29,6 +29,7 @@
     padding: 23px;
     padding-top: 0;
     position: relative;
+    padding-bottom: 0;
     ion-input{
       border-radius: 23px;
       height: 59px;
@@ -93,4 +94,8 @@
         font-size: 1.4rem;
       }
     }
+  }
+
+  ion-content{
+    --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
   }

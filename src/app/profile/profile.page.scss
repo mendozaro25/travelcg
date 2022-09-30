@@ -10,12 +10,13 @@
     display: block;
     font-family: system-ui;
     font-weight: 400;
+    color: white;
   }
   .user_div{
     padding: 20px;
     width: 100%;
     height: 260px;
-    background: linear-gradient(to right, #238306, #599c3c);
+    background: linear-gradient(to right, #678a5b, #678a5b);
     display: flex;
     justify-content: space-between;
     padding-top: 40px;
@@ -43,7 +44,7 @@
 }
 
 .content_div{
-  background: #5c7e55;
+  background: #56aa5b;
   width: 100%;
   border-top-left-radius: 75px;
   margin-top: -90px;
@@ -52,7 +53,7 @@
   .text-details{
     width: 100%;
     border-radius: 5px;
-    box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+    box-shadow: 0px 3px 6px rgba(255, 255, 255, 0.3);
     padding: 10px;
   }
 
@@ -67,7 +68,8 @@
 
     ion-icon{
       font-size: 20px;
-      font-weight: 400;
+      font-weight: 600;
+      color: white;
     }
   }
 
@@ -93,6 +95,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%,-50%);
+            color: white;
           }
         }
         .details{
@@ -101,10 +104,12 @@
             font-weight: 700;
             font-size: 15px;
             font-family: system-ui;
+            color: black;
           }
           .small_lbl{
             font-size: 13px;
             font-family: system-ui;
+            color: black;
           }
         }
       }
@@ -144,4 +149,8 @@
       font-size: 1.4rem;
     }
   }
+}
+
+ion-footer{
+  background-color: black;
 }

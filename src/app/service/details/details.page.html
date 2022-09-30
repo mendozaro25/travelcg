@@ -1,15 +1,15 @@
-<ion-content [fullscreen]="true" color="ligth">
+<ion-content [fullscreen]="true">
 
   <ion-header class="ion-no-border" [ngStyle]="{'background-image': 'linear-gradient(#13860400 0%, #13860481 80%, #138604d5 100%), url(' + imagen  + ')'}">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-fab-button size="small" color="white" routerLink="../../service">
-          <ion-icon name="chevron-back-outline" color="green"></ion-icon>
+        <ion-fab-button size="small" color="green" routerLink="../../service">
+          <ion-icon name="chevron-back-outline" color="white"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
       <ion-buttons slot="end">
-        <ion-fab-button size="small" color="white">
-          <ion-icon name="star-outline" color="green"></ion-icon>
+        <ion-fab-button size="small" color="green">
+          <ion-icon name="star-outline" color="white"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
     </ion-toolbar>
@@ -78,7 +78,7 @@
   <ion-grid *ngIf="segmentValue === '2'">
     <ion-row>
       <ion-col size="12">
-        <ion-item lines="none" color="green" href="../../routesmap">
+        <ion-item lines="none" color="green" [routerLink]="['../details', idServicio]">
           <ion-icon name="car-sport-sharp" slot="start" color="white"></ion-icon>
           <ion-label>
             <ion-text color="dark"

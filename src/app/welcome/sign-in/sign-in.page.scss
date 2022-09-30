@@ -1,71 +1,95 @@
-ion-content{
-  --background: url('../../../assets/image/slideImage-01.jpg') no-repeat center center/cover;
-  ion-header{
-    ion-toolbar{
+ion-content {
+  --background: url("../../../assets/image/slideImage-01.jpg") no-repeat center
+    center/cover;
+  ion-header {
+    ion-toolbar {
       --background: transparent;
     }
   }
-  ion-row{
-    margin: 10vh 0 0 5vh;
+  ion-row {
+    margin: 2vh 0 0 4vh;
     flex-direction: column;
-    ion-img{
+    ion-img {
       height: 13vh;
       width: 13vh;
       margin-bottom: 2%;
     }
-    ion-label, p{
-      font-size: 1.0em;
+    ion-label,
+    p {
+      font-size: 1em;
       font-weight: bold;
-      color: var(--ion-color-white);
+      color: white;
       font-family: system-ui;
       text-transform: uppercase;
     }
   }
-  .logo{
-    margin: 2vh 0 0 4vh;
-  }
 }
 
-ion-footer{
-  ion-list{
+ion-footer {
+  --ion-background-color: #053808f7;
+  ion-list {
     border-radius: 20px 20px 0 0;
-    ion-list-header{
-      ion-label{
+    ion-list-header {
+      ion-label {
         font-weight: bold;
         font-size: 1.4em;
+        color: white;
       }
     }
-    ion-item{
-      background-color: white;
-      ion-input{
-        margin: 0 1vh;
+    ion-item {
+      ion-input {
         font-size: 0.9em;
+        background: linear-gradient(21deg, #b5deb8, #b5deb8);
+        border-radius: 9999em;
+        border-radius: 9999em;
+        font-family: system-ui;
+        font-weight: 500;
+        padding: 3px;
+        --padding-start: 20px;
+        color: black;
       }
-      ion-label{
+      ion-label {
         font-size: 0.9em;
+        color: #eee;
+        padding-bottom: 1%;
+        font-weight: 550;
       }
-      ion-icon{
+      ion-icon {
         color: green;
         margin: 0 1vh;
         font-size: 1.5em;
         font-weight: bold;
       }
     }
-      .error{
-        font-size: 1.0em !important;
-        color: red;
+    .error {
+      font-size: 1em !important;
+      color: red;
+    }
+    .text {
+      ion-text {
+        font-size: 1.2em !important;
       }
-      .text{
-        ion-text{
-          font-size: 1.2em !important;
-        }
+    }
+    ion-button {
+      width: 80%;
+      padding-top: 1.5%;
+      margin: auto;
+      margin-top: 10%;
+      margin-bottom: 10%;
+      ion-text {
+        font-family: system-ui;
+        font-weight: 650;
+        text-transform: uppercase;
       }
-      ion-button{
-        margin: 5vh 0;
-        ion-text{
-          font-size: 0.9em;
-          text-transform: none;
-        }
+    }
+    p {
+      margin-bottom: 5%;
+      color: white;
+      font-weight: 500;
+      a {
+        color: greenyellow;
+        font-weight: 600;
       }
     }
   }
+}

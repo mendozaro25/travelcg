@@ -23,7 +23,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-list lines="full">
+  <ion-list lines="none">
     <ion-list-header class="ion-margin">
       <ion-label> Nuevo Usuario </ion-label>
     </ion-list-header>
@@ -32,7 +32,7 @@
       <form [formGroup]="userForm" (ngSubmit)="signUp(userForm.value)">
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating" color="white"><ion-icon name="person"></ion-icon> Usuario</ion-label>
+            <ion-label position="stacked" color="green"><ion-icon name="person"></ion-icon> Usuario</ion-label>
             <ion-input
               class="text"
               formControlName="username"
@@ -51,7 +51,7 @@
 
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating" color="white"><ion-icon name="mail"></ion-icon> Email</ion-label>
+            <ion-label position="stacked" color="green"><ion-icon name="mail"></ion-icon> Email</ion-label>
             <ion-input
               formControlName="email"
               type="email"
@@ -69,7 +69,7 @@
 
         <div class="ion-margin-vertical">
           <ion-item>
-            <ion-label position="floating" color="white"><ion-icon name="lock-closed"></ion-icon>Contraseña</ion-label>
+            <ion-label position="stacked" color="green"><ion-icon name="lock-closed"></ion-icon>Contraseña</ion-label>
             <ion-input
               formControlName="password"
               type="password"
@@ -90,7 +90,7 @@
         </ion-button>
         <ion-text class="error">{{ errorMsg}}</ion-text>
       </form>
-      <p class="ion-text-center" style="font-weight: 500;">Ya estas registrado? <a (click)="goToLogin()" style="color: green; font-weight: 600;">Iniciar Sesion</a></p>
+      <p class="ion-text-center">Ya estas registrado? <a (click)="goToLogin()">Iniciar Sesion</a></p>
     </ion-item-group>
   </ion-list>
 </ion-footer>

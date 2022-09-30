@@ -208,3 +208,15 @@ ion-content {
   }
 }
 
+ion-content{
+  --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
+  ion-menu{
+    --ion-background-color: black;
+    ion-header{
+      --ion-background-color: black;
+    }
+  }
+  ion-footer{
+    background-color: black;
+  }
+}

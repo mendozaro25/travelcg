@@ -11,41 +11,20 @@ export class DetailsPage implements OnInit {
 
   segmentValue = '1';
 
-  idSitio: any;
-  nombre: any;
-  descripcion: any;
-  ubicacion: any;
-  imagen: any;
-  atencion: any;
+  datos: any = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService
     ){
-      this.activatedRoute.paramMap.subscribe(p => {
-        this.idSitio = p.get('idSitio');
-        console.log(this.idSitio);
-        this.getSitio(this.idSitio);
-      });
     }
 
     ngOnInit() {
-
-    }
-
-    getSitio(idSitio){
-      this.servicio.getSitiosById(idSitio).subscribe((res: any) => {
-        console.log('Sitio encontrado', res);
-        const sitio = res[0];
-        this.nombre = sitio.nomSitio;
-        this.descripcion = sitio.desSitio;
-        this.ubicacion = sitio.ubiSitio;
-        this.imagen = sitio.urlSitio;
-        this.atencion = sitio.atencionSitio;
-      },(error: any) => {
-        console.log('Error', error);
-      }
-      );
+      this.activatedRoute.paramMap.subscribe( p => {
+        console.log(p.get('idSitio'));
+        this.datos = this.servicio.getSitiosById(p.get('idSitio'));
+        console.log(this.datos);
+      });
     }
 
     segmentChanged(event){

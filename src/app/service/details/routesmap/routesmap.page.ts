@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { ActivatedRoute} from '@angular/router';
-import { SitetoursService } from '../sitetours/sitetours.service';
-import { WelcomeService } from '../welcome/welcome.service';
+import { ServiceService } from '../../service.service';
+import { WelcomeService } from 'src/app/welcome/welcome.service';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
 import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
@@ -26,26 +26,48 @@ export class RoutesmapPage implements OnInit {
 
   destination = { lat: -7.738416556390178, lng: -79.18561818964855 };
 
-  datos: any = [];
+  idServicio: any;
+  nombre: any;
+  descripcion: any;
+  ubicacion: any;
+  imagen: any;
+  categoria: any;
+  latitud: any;
+  longitud: any;
 
   constructor(
     protected platform: Platform,
     private activatedRoute: ActivatedRoute,
-    private servicio: SitetoursService,
+    private servicio: ServiceService,
     private sanitizer: DomSanitizer,
     private welcomeservice: WelcomeService,
     private geolocation: Geolocation
     ){
+      this.activatedRoute.paramMap.subscribe(p => {
+        this.idServicio = p.get('rutasSe');
+        console.log(this.idServicio);
+        this.getServicio(this.idServicio);
+      });
     }
 
     ngOnInit() {
-      this.activatedRoute.paramMap.subscribe( p => {
-        console.log(p.get('rutas'));
-        this.datos = this.servicio.getSitiosById(p.get('rutas'));
-      });
       this.loadMap();
     }
 
+    getServicio(idServicio){
+      this.servicio.getServiciosById(idServicio).subscribe((res: any) => {
+        console.log('Sitio encontrado', res);
+        const servicio = res[0];
+        this.nombre = servicio.nomServicio;
+        this.descripcion = servicio.desServicio;
+        this.ubicacion = servicio.ubiServicio;
+        this.imagen = servicio.urlServicio;
+        this.categoria = servicio.categoriaServicio;
+      },(error: any) => {
+        console.log('Error', error);
+      }
+      );
+    }
 
     loadMap() {
       this.geolocation.getCurrentPosition().then((resp) => {
@@ -55,7 +77,7 @@ export class RoutesmapPage implements OnInit {
           this.long = resp.coords.longitude
         ];
         console.log('latitud ori: ', this.lati, 'longitud ori: ', this.long);
-        console.log('latitud dest: ', this.datos.latiSitio, 'longitud dest: ', this.datos.longSitio);
+        console.log('latitud dest: ', this.latitud, 'longitud dest: ', this.longitud);
         // create a new map by passing HTMLElement
         const mapEle: HTMLElement = document.getElementById('map');
         const indicatorsEle: HTMLElement = document.getElementById('indicators');

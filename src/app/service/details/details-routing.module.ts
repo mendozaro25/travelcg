@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: DetailsPage
+  },
+  {
+    path: ':rutasSe',
+    loadChildren: () => import('./routesmap/routesmap.module').then( m => m.RoutesmapPageModule)
   }
 ];
 

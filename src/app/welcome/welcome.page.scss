@@ -1,40 +1,48 @@
-ion-slides{
-  height: 100%;
-  ion-slide{
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    align-items: initial;
-    justify-content: left;
-    ion-row{
-      margin: 12vh 0 0 5vh;
-      flex-direction: column;
-      ion-img{
-        height: 15vh;
-        width: 15vh;
-        margin-bottom: 2%;
+ion-content{
+  ion-slides{
+    height: 100%;
+    ion-slide{
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      align-items: initial;
+      justify-content: left;
+      ion-row{
+        margin: 12vh 0 0 5vh;
+        flex-direction: column;
+        ion-img{
+          height: 15vh;
+          width: 15vh;
+          margin-bottom: 2%;
+        }
+        ion-label, p{
+          font-size: 1.0em;
+          font-weight: bold;
+          color: var(--ion-color-white);
+          font-family: system-ui;
+          text-transform: uppercase;
+        }
       }
-      ion-label, p{
-        font-size: 1.0em;
-        font-weight: bold;
-        color: var(--ion-color-white);
-        font-family: system-ui;
-        text-transform: uppercase;
+      .logoLabel{
+        margin-top: 1vh;
       }
-    }
-    .logoLabel{
-      margin-top: 1vh;
-    }
-    .logo{
-      margin: 10vh 0 0 5vh;
-    }
-    .authButton{
-      transform: translateY(35vh);
-      ion-button{
-        width: 80%;
-        margin: auto;
-        margin-bottom: 1vh;
-        margin-top: 5vh;
+      .logo{
+        margin: 10vh 0 0 5vh;
+      }
+      .authButton{
+        transform: translateY(35vh);
+        ion-button{
+          width: 80%;
+          margin: auto;
+          margin-bottom: 1vh;
+          margin-top: 5vh;
+          ion-text{
+            font-size: 1.0rem;
+            font-family: system-ui;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+        }
       }
     }
   }
