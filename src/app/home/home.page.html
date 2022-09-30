@@ -14,27 +14,27 @@
           <br>
           <ion-menu-toggle auto-hide="false">
             <ion-item button [routerLink]="['../home']" >
-              <ion-icon slot="start" name="home" color="green"></ion-icon>
+              <ion-icon slot="start" name="home" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Inicio </ion-label>
             </ion-item>
           <ion-item button [routerLink]="['../sitetours']" >
-            <ion-icon name="airplane" slot="start" color="green"></ion-icon>
+            <ion-icon name="airplane" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Sitios Turisticos </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../service']" >
-            <ion-icon name="book" slot="start" color="green"></ion-icon>
+            <ion-icon name="book" slot="start" color="primary"></ion-icon>
             <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Servicios </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../emergency']" >
-              <ion-icon name="megaphone" slot="start" color="green"></ion-icon>
+              <ion-icon name="megaphone" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Emergencias </ion-label>
           </ion-item>
           <ion-item button [routerLink]="['../information']" >
-              <ion-icon name="person" slot="start" color="green"></ion-icon>
+              <ion-icon name="person" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Mi Perfil </ion-label>
           </ion-item>
           <ion-item (click)="signOut()">
-              <ion-icon name="log-out" slot="start" color="green"></ion-icon>
+              <ion-icon name="log-out" slot="start" color="primary"></ion-icon>
               <ion-label style="font-size: 20px; color: white; font-family: system-ui; font-weight: 550;"> Salir </ion-label>
           </ion-item>
           </ion-menu-toggle>
@@ -63,7 +63,7 @@
           [(ngModel)]="searchTerm"
           showCancelButton="focus"
           cancelButtonText="Borrar"
-          color="green"
+          color="primary"
           animated
           >
           </ion-searchbar>

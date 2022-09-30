@@ -2,7 +2,11 @@ import { AfterContentChecked, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { WelcomeService } from '../welcome/welcome.service';
 import SwiperCore, { EffectFade, SwiperOptions } from 'swiper';
+<<<<<<< HEAD
 import { SitetoursService } from '../sitetours/sitetours.service';
+=======
+import { ToastController } from '@ionic/angular';
+>>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
 
 // install Swiper modules
 SwiperCore.use([EffectFade]);
@@ -25,8 +29,13 @@ export class HomePage implements OnInit, AfterContentChecked {
   constructor(
     private router: Router,
     private welcomeService: WelcomeService,
+<<<<<<< HEAD
     // eslint-disable-next-line @typescript-eslint/naming-convention
     private Servicio: SitetoursService
+=======
+    private Servicio: HomeService,
+    private toastController: ToastController
+>>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
   )
   {
   }
@@ -49,9 +58,16 @@ export class HomePage implements OnInit, AfterContentChecked {
 
   signOut() {
     this.welcomeService.signoutUser()
-      .then(res => {
+      .then(async res => {
         localStorage.removeItem('ingresado');
         this.router.navigateByUrl('welcome');
+        const toast = await this.toastController.create({
+          message: '¡NOS VEMOS PRONTO!',
+          duration: 4000,
+          icon: 'hand-left-sharp',
+          color: 'secondary',
+        });
+        toast.present();
       })
       .catch(error => {
         console.log(error);

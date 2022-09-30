@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WelcomeService } from '../welcome/welcome.service';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -14,6 +15,7 @@ export class ProfilePage implements OnInit {
   constructor(
     private router: Router,
     private welcomeService: WelcomeService,
+    private toastController: ToastController
   ) { }
 
   ngOnInit() {
@@ -28,9 +30,16 @@ export class ProfilePage implements OnInit {
 
   signOut() {
     this.welcomeService.signoutUser()
-      .then(res => {
+      .then(async res => {
         localStorage.removeItem('ingresado');
         this.router.navigateByUrl('welcome');
+        const toast = await this.toastController.create({
+          message: '¡NOS VEMOS PRONTO!',
+          duration: 4000,
+          icon: 'hand-left-sharp',
+          color: 'secondary',
+        });
+        toast.present();
       })
       .catch(error => {
         console.log(error);

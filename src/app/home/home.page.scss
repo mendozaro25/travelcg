@@ -183,6 +183,7 @@
     color: white;
 }
 
+<<<<<<< HEAD
 ion-app{
   --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
   ion-menu{
@@ -193,5 +194,24 @@ ion-app{
   }
   ion-footer{
     background-color: black;
+=======
+  .menu{
+      font-size: 31.5px;
+      padding: 20px;
+      color: white;
+  }
+
+  ion-app{
+    --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
+    ion-menu{
+      --ion-background-color: black;
+      ion-header{
+        --ion-background-color: black;
+      }
+    }
+    ion-footer{
+      background-color: black;
+    }
+>>>>>>> 8b4e3aff4b27b4cc0a4a0fa858978aeb3456f6a7
   }
 }

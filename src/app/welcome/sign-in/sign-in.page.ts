@@ -69,7 +69,9 @@ export class SignInPage implements OnInit {
         this.errorMsg = 'Credenciales Incorrectas!!';
         const toast = await this.toastController.create({
           message: 'Bienvenido de nuevo a Travel Cg',
-          duration: 2000
+          duration: 4000,
+          icon: 'thumbs-up-sharp',
+          color: 'primary'
         });
         toast.present();
       }, _error => {
