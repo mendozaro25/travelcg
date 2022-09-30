@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import { ToastController } from '@ionic/angular';
 import { SitetoursService } from '../sitetours.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private servicio: SitetoursService
+    private servicio: SitetoursService,
+    private toastController: ToastController
     ){
     }
 
@@ -25,6 +27,17 @@ export class DetailsPage implements OnInit {
         this.datos = this.servicio.getSitiosById(p.get('idSitio'));
         console.log(this.datos);
       });
+    }
+
+    async likeSite(){
+      const toast = await this.toastController.create({
+        message: 'Agregado a tus sitios favoritos...',
+        duration: 3000,
+        icon: 'heart-sharp',
+        color: 'success',
+        position: 'top'
+      });
+      toast.present();
     }
 
     segmentChanged(event){

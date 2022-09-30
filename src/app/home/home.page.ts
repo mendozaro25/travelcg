@@ -57,7 +57,7 @@ export class HomePage implements OnInit, AfterContentChecked {
           message: '¡NOS VEMOS PRONTO!',
           duration: 4000,
           icon: 'hand-left-sharp',
-          color: 'secondary',
+          color: 'primary',
         });
         toast.present();
       })

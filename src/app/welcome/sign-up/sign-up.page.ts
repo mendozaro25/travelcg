@@ -88,9 +88,16 @@ export class SignUpPage implements OnInit {
           color: 'primary'
         });
         toast.present();
-      }, _error => {
-        this.errorMsg = 'Error: Ya existe una cuenta con esos datos. Intente nuevamente';
-        this.successMsg = 'Cuenta Registrada';
+      }, async _error => {
+        const toast = await this.toastController.create({
+          message: 'El usuario y/o email ya existen, intente nuevamente',
+          duration: 3500,
+          icon: 'alert',
+          color: 'danger',
+          position: 'top'
+        });
+        toast.present();
+        this.userForm.reset();
       });
   }
 

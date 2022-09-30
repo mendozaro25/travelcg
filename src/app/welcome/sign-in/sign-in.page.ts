@@ -69,13 +69,21 @@ export class SignInPage implements OnInit {
         this.errorMsg = 'Credenciales Incorrectas!!';
         const toast = await this.toastController.create({
           message: 'Bienvenido de nuevo a Travel Cg',
-          duration: 4000,
+          duration: 3500,
           icon: 'thumbs-up-sharp',
           color: 'primary'
         });
         toast.present();
-      }, _error => {
-        this.errorMsg = 'Error: Las credenciales son incorrectas. Intente nuevamente o puede crearse una nueva cuenta';
+      }, async _error => {
+        const toast = await this.toastController.create({
+          message: 'El usuario y/o email no existen. Intente nuevamente o puede crearse una nueva cuenta',
+          duration: 3500,
+          icon: 'alert',
+          color: 'danger',
+          position: 'top'
+        });
+        toast.present();
+        this.userForm.reset();
       });
   }
 
