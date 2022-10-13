@@ -12,21 +12,42 @@ export class DetailsPage implements OnInit {
 
   segmentValue = '1';
 
-  datos: any = [];
+  idSitio: any;
+
+  nombre: any;
+  descripcion: any;
+  ubicacion: any;
+  atencion: any;
+  imagen: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService,
     private toastController: ToastController
     ){
+      this.activatedRoute.paramMap.subscribe(p => {
+        this.idSitio = p.get('idSitio');
+        console.log(this.idSitio);
+        this.getSitio(this.idSitio);
+      });
     }
 
     ngOnInit() {
-      this.activatedRoute.paramMap.subscribe( p => {
-        console.log(p.get('idSitio'));
-        this.datos = this.servicio.getSitiosById(p.get('idSitio'));
-        console.log(this.datos);
-      });
+    }
+
+    getSitio(idSitio){
+      this.servicio.getSitiosById(idSitio).subscribe((res: any) => {
+        console.log('Sitio encontrado', res);
+        const servicio = res[0];
+        this.nombre = servicio.nomSitio;
+        this.descripcion = servicio.desSitio;
+        this.ubicacion = servicio.ubiSitio;
+        this.atencion = servicio.atencionSitio;
+        this.imagen = servicio.urlSitio;
+      },(error: any) => {
+        console.log('Error', error);
+      }
+      );
     }
 
     async likeSite(){

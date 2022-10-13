@@ -17,24 +17,24 @@ export class ServiceService {
 
   //listar
   getServicios(){
-    return this.http.get('http://travelcg-backend.test/admin/api/services/getService.php');
+    return this.http.get('https://tourscg.com/admin/api/services/getService.php');
   }
 
   getServiciosHoteles(){
-    return this.http.get('http://travelcg-backend.test/admin/api/services/getServiceHotel.php');
+    return this.http.get('https://tourscg.com/admin/api/services/getServiceHotel.php');
   }
 
   getServiciosEntretenimientos(){
-    return this.http.get('http://travelcg-backend.test/admin/api/services/getServiceEntert.php');
+    return this.http.get('https://tourscg.com/admin/api/services/getServiceEntert.php');
   }
 
   getServiciosCompras(){
-    return this.http.get('http://travelcg-backend.test/admin/api/services/getServiceShopping.php');
+    return this.http.get('https://tourscg.com/admin/api/services/getServiceShopping.php');
   }
 
   //buscar
   getServiciosById(idServicio: string){
-    return this.http.get('http://travelcg-backend.test/admin/api/services/getServiceById.php?idServicio='+idServicio);
+    return this.http.get('https://tourscg.com/admin/api/services/getServiceById.php?idServicio='+idServicio);
   }
 
 }

@@ -41,7 +41,7 @@
           </ion-col>
           <ion-col size="2">
             <ion-label>
-              <ion-button color="primary" fill="clear" [routerLink]="['../../service', s.idServicio]" >
+              <ion-button color="primary" fill="clear" [routerLink]="['../shop', s.idServicio]" >
                 <ion-icon slot="icon-only" name="caret-forward-outline">
                 </ion-icon>
               </ion-button>
@@ -56,10 +56,10 @@
 
 <ion-footer>
   <div class="tabs">
-    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
-    <div class="tab-icon active" button [routerLink]="['../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
+    <div class="tab-icon active" button [routerLink]="['../../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
   </div>
 </ion-footer>

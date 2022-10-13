@@ -3,7 +3,7 @@
   <ion-header class="ion-no-border" [ngStyle]="{'background-image': 'linear-gradient(#13860400 0%, #13860481 80%, #138604d5 100%), url(' + imagen  + ')'}">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-fab-button size="small" color="green" routerLink="../../service">
+        <ion-fab-button size="small" color="green" routerLink="../../shop">
           <ion-icon name="chevron-back-outline" color="white"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
@@ -78,7 +78,7 @@
   <ion-grid *ngIf="segmentValue === '2'">
     <ion-row>
       <ion-col size="12">
-        <ion-item lines="none" color="green" [routerLink]="['../details', idServicio]">
+        <ion-item lines="none" color="green">
           <ion-icon name="car-sport-sharp" slot="start" color="white"></ion-icon>
           <ion-label>
             <ion-text color="dark"

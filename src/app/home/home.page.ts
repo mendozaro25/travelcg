@@ -30,13 +30,19 @@ export class HomePage implements OnInit, AfterContentChecked {
     private toastController: ToastController
   )
   {
+    this.getSitios();
+  }
+
+  getSitios(){
+    this.Servicio.getSitios().subscribe((res: any) => {
+      console.log('Sitios encontrados correctamente', res);
+      this.sitios = res;
+    }, (error: any) => {
+      console.log('Error', error);
+    });
   }
 
   ngOnInit() {
-    this.sitios = this.Servicio.getSitios();
-    console.log(this.sitios);
-    this.sitios = this.Servicio.getSitios();
-    console.log(this.sitios);
     this.welcomeService.userDetails().subscribe(response => {
       if (response !== null) {
         this.userDetail = response.email;
@@ -77,8 +83,12 @@ export class HomePage implements OnInit, AfterContentChecked {
   }
 
   ionViewWillEnter(){
-    this.sitios = this.Servicio.getSitios();
-    console.log(this.sitios);
+    this.Servicio.getSitios().subscribe((res: any) => {
+      console.log('Sitios encontrados correctamente', res);
+      this.sitios = res;
+    }, (error: any) => {
+      console.log('Error', error);
+    });
   }
 
 }

@@ -17,11 +17,11 @@ export class HomeService {
 
   //listar
   getSitios(){
-    return this.http.get('http://travelcg-backend.test/admin/api/sites/getSite.php');
+    return this.http.get('https://tourscg.com/admin/api/sites/getSite.php');
   }
 
   //buscar
   getSitiosById(idSitio: string){
-    return this.http.get('http://travelcg-backend.test/admin/api/sites/getSiteById.php?idSitio='+idSitio);
+    return this.http.get('https://tourscg.com/admin/api/sites/getSiteById.php?idSitio='+idSitio);
   }
 }

@@ -28,24 +28,34 @@ export class RoutesmapPage implements OnInit {
 
   datos: any = [];
 
+  idSitio: any;
+
   constructor(
     protected platform: Platform,
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService,
-    private sanitizer: DomSanitizer,
     private welcomeservice: WelcomeService,
     private geolocation: Geolocation
     ){
-    }
-
-    ngOnInit() {
-      this.activatedRoute.paramMap.subscribe( p => {
-        console.log(p.get('rutas'));
-        this.datos = this.servicio.getSitiosById(p.get('rutas'));
+      this.activatedRoute.paramMap.subscribe(p => {
+        this.idSitio = p.get('rutas');
+        console.log(this.idSitio);
+        this.getSitio(this.idSitio);
       });
       this.loadMap();
     }
 
+    ngOnInit() {
+    }
+
+    getSitio(idSitio){
+      this.servicio.getSitiosById(idSitio).subscribe((res: any) => {
+        console.log('Sitio encontrado', res);
+      },(error: any) => {
+        console.log('Error', error);
+      }
+      );
+    }
 
     loadMap() {
       this.geolocation.getCurrentPosition().then((resp) => {

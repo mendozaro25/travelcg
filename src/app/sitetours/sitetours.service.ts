@@ -107,26 +107,13 @@ export class SitetoursService {
     this.headers.append('Access-Control-Allow-Origin', '*');
   }
 
-  getSitios(){
-    return [...this.sitetours];
-  }
-
-  getSitiosById(idSitio: string){
-    return {
-      // eslint-disable-next-line arrow-body-style
-      ...this.sitetours.find(p => {
-        return p.idSitio === idSitio;
-      })
-    };
-  }
-
   //listar
-  getSitiosAPI(){
-    return this.http.get('http://travelcg-backend.test/admin/api/sites/getSite.php');
+  getSitios(){
+    return this.http.get('https://tourscg.com/admin/api/sites/getSite.php');
   }
 
   //buscar
-  getSitiosByIdAPI(idSitio: string){
-    return this.http.get('http://travelcg-backend.test/admin/api/sites/getSiteById.php?idSitio='+idSitio);
+  getSitiosById(idSitio: string){
+    return this.http.get('https://tourscg.com/admin/api/sites/getSiteById.php?idSitio='+idSitio);
   }
 }
