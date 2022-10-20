@@ -30,6 +30,9 @@ export class RoutesmapPage implements OnInit {
 
   idSitio: any;
 
+  latiSitio: any;
+  longSitio: any;
+
   constructor(
     protected platform: Platform,
     private activatedRoute: ActivatedRoute,
@@ -51,6 +54,9 @@ export class RoutesmapPage implements OnInit {
     getSitio(idSitio){
       this.servicio.getSitiosById(idSitio).subscribe((res: any) => {
         console.log('Sitio encontrado', res);
+        const sitio = res[0];
+        this.latiSitio = parseFloat(sitio.latiSitio);
+        this.longSitio = parseFloat(sitio.longSitio);
       },(error: any) => {
         console.log('Error', error);
       }
@@ -65,7 +71,7 @@ export class RoutesmapPage implements OnInit {
           this.long = resp.coords.longitude
         ];
         console.log('latitud ori: ', this.lati, 'longitud ori: ', this.long);
-        console.log('latitud dest: ', this.datos.latiSitio, 'longitud dest: ', this.datos.longSitio);
+        console.log('latitud dest: ', this.latiSitio, 'longitud dest: ', this.longSitio);
         // create a new map by passing HTMLElement
         const mapEle: HTMLElement = document.getElementById('map');
         const indicatorsEle: HTMLElement = document.getElementById('indicators');
@@ -89,7 +95,7 @@ export class RoutesmapPage implements OnInit {
     calculateRoute() {
       this.directionsService.route({
         origin: {lat: this.lati, lng: this.long },
-        destination: this.destination,
+        destination:  {lat: this.latiSitio, lng: this.longSitio },
         travelMode: google.maps.TravelMode.DRIVING,
       }, (response, status)  => {
         if (status === google.maps.DirectionsStatus.OK) {
