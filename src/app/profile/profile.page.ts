@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { WelcomeService } from '../welcome/welcome.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { FavoriteService } from '../favorite/favorite.service';
-import { FavoritePage } from '../favorite/favorite.page';
-import { Observable } from 'rxjs';
 import { SitetoursService } from '../sitetours/sitetours.service';
 import { ServiceService } from '../service/service.service';
 import { CrudCotizacionesService } from '../favorite/crud-favorite.service';
+import { CurdFavoritesService } from '../favorite-service/favorite-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +18,8 @@ export class ProfilePage implements OnInit {
 
   sitios: any = [];
 
+  servicesFav: any = [];
+
   servicios: any = [];
 
   email: string;
@@ -29,6 +29,7 @@ export class ProfilePage implements OnInit {
     private welcomeService: WelcomeService,
     private toastController: ToastController,
     private crud: CrudCotizacionesService,
+    private crudService: CurdFavoritesService,
     private servicioTuristicos: SitetoursService,
     private servicio: ServiceService
   ) { }
@@ -40,6 +41,8 @@ export class ProfilePage implements OnInit {
     this.getServicios();
 
     this.getSitesFavorite();
+
+    this.getServicesFavorite();
 
     this.welcomeService.userDetails().subscribe(response => {
       if (response !== null) {
@@ -54,8 +57,8 @@ export class ProfilePage implements OnInit {
     this.sitiosfav = await this.crud.getData();
   }
 
-  async ionViewWillEnter(){
-    this.sitiosfav = await this.crud.getData();
+  async getServicesFavorite(){
+    this.servicesFav = await this.crudService.getData();
   }
 
   getServicios(){
@@ -68,6 +71,25 @@ export class ProfilePage implements OnInit {
   }
 
   getSitios(){
+    this.servicioTuristicos.getSitios().subscribe((res: any) => {
+      console.log('Sitios encontrados correctamente', res);
+      this.sitios = res;
+    }, (error: any) => {
+      console.log('Error', error);
+    });
+  }
+
+  async ionViewWillEnter(){
+    this.sitiosfav = await this.crud.getData();
+    this.servicesFav = await this.crudService.getData();
+
+    this.servicio.getServiciosHoteles().subscribe((res: any) => {
+      console.log('Hoteles encontrados correctamente', res);
+      this.servicios = res;
+    }, (error: any) => {
+      console.log('Error', error);
+    });
+
     this.servicioTuristicos.getSitios().subscribe((res: any) => {
       console.log('Sitios encontrados correctamente', res);
       this.sitios = res;

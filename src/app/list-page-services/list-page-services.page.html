@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
+      Mis Servicios Favoritos</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content fullscreen="true">
+
+  <!-- FAVORITES TOTAL -->
+  <div *ngIf="servicios.length">
+    <!-- ITEMS -->
+  <ion-list lines="none">
+    <div *ngFor="let item of servicios; let i = index;">
+      <ion-item-sliding>
+        <ion-item>
+          <ion-card  button [routerLink]="['../service', item[0].idServicio]">
+            <img style="height: 250px; width: 500px;" [src]="item[0].imagenServicio"/>
+            <ion-card-header style="background-color: green;">
+              <ion-card-subtitle style="font-family: system-ui; font-weight: 600; color: white;">{{item[0].ubicacionServicio}}</ion-card-subtitle>
+              <ion-card-title style="font-family: system-ui; font-weight: 700; color: white; font-size: 25px;">{{item[0].nombreServicio}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+        </ion-item>
+        <!-- REMOVE -->
+        <ion-item-options side="end">
+          <ion-item-option (click)="delete(i)">
+            <ion-icon name="trash-outline" size="large"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </div>
+  </ion-list>
+  </div>
+  <!-- NULL QUOTE ITEMS-->
+  <div *ngIf="!servicios.length">
+    <h3 class="title">No existen servicios en tus favoritos...</h3>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button routerLink="../service">
+        <ion-icon name="book"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+  </div>
+  <!-- END NULL QUOTE ITEMS-->
+
+</ion-content>

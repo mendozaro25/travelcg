@@ -40,12 +40,12 @@
             <ion-col size="6">
               <div class="flex_div">
                 <div class="round_div">
-                  <ion-icon class="icono" name="book"></ion-icon>
+                  <ion-icon class="icono" name="heart"></ion-icon>
                 </div>
 
                 <div class="details">
-                  <ion-label class="bold_lbl">{{servicios.length}}</ion-label>
-                  <ion-label class="small_lbl">Servicios</ion-label>
+                  <ion-label class="bold_lbl">{{servicesFav.length}}</ion-label>
+                  <ion-label class="small_lbl">Servicios Favoritos</ion-label>
                 </div>
               </div>
             </ion-col>
@@ -79,6 +79,11 @@
 
       <div class="list_div" button [routerLink]="['../list-favorite-sites']">
         <ion-label>Mis Sitios Favoritos</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../list-page-services']">
+        <ion-label>Mis Servicios Favoritos</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
 

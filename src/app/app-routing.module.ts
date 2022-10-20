@@ -45,6 +45,10 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'list-page-services',
+    loadChildren: () => import('./list-page-services/list-page-services.module').then( m => m.ListPageServicesPageModule)
+  },
+  {
     path: ':rutas',
     loadChildren: () => import('./routesmap/routesmap.module').then( m => m.RoutesmapPageModule),
     canActivate: [IngresadoGuard]

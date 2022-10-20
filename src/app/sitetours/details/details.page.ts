@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { CrudCotizacionesService } from 'src/app/favorite/crud-favorite.service';
-import { FavoritePage } from 'src/app/favorite/favorite.page';
-import { FavoriteService } from 'src/app/favorite/favorite.service';
 import { SitetoursService } from '../sitetours.service';
 
 @Component({
@@ -27,7 +25,6 @@ export class DetailsPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService,
     private toastController: ToastController,
-    private favoriteService: FavoriteService,
     private crud: CrudCotizacionesService
     ){
       this.activatedRoute.paramMap.subscribe(p => {

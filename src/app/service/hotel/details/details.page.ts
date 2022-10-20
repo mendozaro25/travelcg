@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { CurdFavoritesService } from 'src/app/favorite-service/favorite-service.service';
 import { ServiceService } from '../../service.service';
 
 @Component({
@@ -22,7 +24,9 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private servicio: ServiceService
+    private servicio: ServiceService,
+    private toastController: ToastController,
+    private crud: CurdFavoritesService
     ){
       this.activatedRoute.paramMap.subscribe(p => {
         this.idServicio = p.get('idServicio');
@@ -36,7 +40,7 @@ export class DetailsPage implements OnInit {
 
   getServicio(idServicio){
     this.servicio.getServiciosById(idServicio).subscribe((res: any) => {
-      console.log('Sitio encontrado', res);
+      console.log('Servicio encontrado', res);
       const servicio = res[0];
       this.nombre = servicio.nomServicio;
       this.descripcion = servicio.desServicio;
@@ -47,6 +51,27 @@ export class DetailsPage implements OnInit {
       console.log('Error', error);
     }
     );
+  }
+
+  async addServiceToFavorite() {
+    const datos = [
+      {
+        idServicio: this.idServicio,
+        nombreServicio: this.nombre,
+        ubicacionServicio: this.ubicacion,
+        imagenServicio: this.imagen
+      }
+    ];
+    await this.crud.addData(datos);
+    const toast = await this.toastController.create({
+      message: 'Agregado a tus servicios favoritos',
+      duration: 3000,
+      icon: 'checkmark-circle-sharp',
+      color: 'primary',
+      position: 'bottom'
+    });
+    toast.present();
+    console.log('Services add to Favorite', datos);
   }
 
   segmentChanged(event){
