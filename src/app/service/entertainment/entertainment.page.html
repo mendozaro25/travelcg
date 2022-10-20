@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">
-      Entretenimiento</ion-title>
+      Entretenimientos</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/service" text=""></ion-back-button>
     </ion-buttons>
@@ -30,7 +30,7 @@
             <ion-button color="primary" fill="clear">
               <img
               style="border-radius: 20px; height: 50px; width: 50px; filter: contrast();"
-              [src]='s.urlSitio'>
+              [src]='s.urlServicio'>
             </ion-button>
           </ion-col>
           <ion-col size="7">
@@ -56,10 +56,10 @@
 
 <ion-footer>
   <div class="tabs">
-    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
-    <div class="tab-icon active" button [routerLink]="['../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
+    <div class="tab-icon active" button [routerLink]="['../../service']" ><ion-icon class="icon-tabs-active" name="book"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../../profile']"><ion-icon class="icon-tabs" name="person"></ion-icon></div>
   </div>
 </ion-footer>

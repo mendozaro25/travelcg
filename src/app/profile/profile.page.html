@@ -27,12 +27,12 @@
             <ion-col size="6">
               <div class="flex_div">
                 <div class="round_div">
-                  <ion-icon class="icono" name="time"></ion-icon>
+                  <ion-icon class="icono" name="airplane"></ion-icon>
                 </div>
 
                 <div class="details">
-                  <ion-label class="bold_lbl">3hr 10min</ion-label>
-                  <ion-label class="small_lbl">Actividad</ion-label>
+                  <ion-label class="bold_lbl">{{sitios.length}}</ion-label>
+                  <ion-label class="small_lbl">Sitios Turisticos</ion-label>
                 </div>
               </div>
             </ion-col>
@@ -40,12 +40,12 @@
             <ion-col size="6">
               <div class="flex_div">
                 <div class="round_div">
-                  <ion-icon class="icono" name="eye"></ion-icon>
+                  <ion-icon class="icono" name="book"></ion-icon>
                 </div>
 
                 <div class="details">
-                  <ion-label class="bold_lbl">8</ion-label>
-                  <ion-label class="small_lbl">Sitios Vistos</ion-label>
+                  <ion-label class="bold_lbl">{{servicios.length}}</ion-label>
+                  <ion-label class="small_lbl">Servicios</ion-label>
                 </div>
               </div>
             </ion-col>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="details">
-                  <ion-label class="bold_lbl">10</ion-label>
+                  <ion-label class="bold_lbl">{{sitiosfav.length}}</ion-label>
                   <ion-label class="small_lbl">Sitios Favoritos</ion-label>
                 </div>
               </div>
@@ -74,6 +74,11 @@
 
       <div class="list_div" button [routerLink]="['../service']">
         <ion-label>Lista de Servicios</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../list-favorite-sites']">
+        <ion-label>Mis Sitios Favoritos</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
 

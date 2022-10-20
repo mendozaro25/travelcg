@@ -3,17 +3,17 @@
   <ion-header class="ion-no-border" [ngStyle]="{'background-image': 'linear-gradient(#13860400 0%, #13860481 80%, #138604d5 100%), url(' + imagen  + ')'}">
     <ion-toolbar>
       <ion-buttons slot="start">
-        <ion-fab-button size="small" color="green" routerLink="../../service">
-          <ion-icon name="chevron-back-outline" color="white"></ion-icon>
+        <ion-fab-button size="small" color="primary" routerLink="../../food">
+          <ion-icon name="chevron-back-outline"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
-      <ion-buttons slot="end">
-        <ion-fab-button size="small" color="green">
-          <ion-icon name="star-outline" color="white"></ion-icon>
+      <ion-buttons slot="end" (click)="likeSite()">
+        <ion-fab-button size="small" color="primary">
+          <ion-icon name="heart-outline"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
     </ion-toolbar>
-    <ion-label color="white">
+    <ion-label style="color: white;">
       {{nombre}}
       <p class="ion-margin-top">
         <ion-text style="font-family: system-ui; letter-spacing: 0.5px; color: #eee;">{{ubicacion}}</ion-text>
@@ -24,23 +24,24 @@
   <ion-segment
   (ionChange)="segmentChanged($event)"
   [(ngModel)]="segmentValue"
-  class="ion-padding-horizontal">
+  class="ion-padding-horizontal"
+  style="margin-top: 2%; background-color: green;">
   <ion-segment-button value="1">
-    <ion-label  style="font-size: 0.8rem; font-family: system-ui; font-weight: 800; text-transform: uppercase;">Descripción</ion-label>
+    <ion-label  style="font-size: 0.8rem; color: white; font-family: system-ui; font-weight: 800; text-transform: uppercase;">Descripción</ion-label>
   </ion-segment-button>
   <ion-segment-button value="2">
-    <ion-label  style="font-size: 0.8rem; font-family: system-ui; font-weight: 800; text-transform: uppercase;">Contactos</ion-label>
+    <ion-label  style="font-size: 0.8rem; color: white; font-family: system-ui; font-weight: 800; text-transform: uppercase;">Contactos</ion-label>
   </ion-segment-button>
   </ion-segment>
 
   <ion-grid *ngIf="segmentValue === '1'">
     <ion-row>
       <ion-col size="6">
-        <ion-item lines="none" color="green">
-          <ion-icon name="albums-sharp" slot="start" color="white"></ion-icon>
+        <ion-item lines="none" color="primary">
+          <ion-icon name="albums-sharp" slot="start"></ion-icon>
           <ion-label>
             <ion-text color="dark"
-            style="font-size: 0.8rem; font-family: system-ui; font-weight: 800; text-transform: uppercase;">
+            style="font-size: 0.8rem; color: white; font-family: system-ui; font-weight: 800; text-transform: uppercase;">
             Categoria</ion-text>
             <p>
               <ion-text color="dark">
@@ -52,15 +53,15 @@
         </ion-item>
       </ion-col>
       <ion-col size="6">
-        <ion-item lines="none" color="green">
-          <ion-icon name="star-sharp" slot="start" color="white"></ion-icon>
+        <ion-item lines="none" color="primary">
+          <ion-icon name="star-sharp" slot="start"></ion-icon>
           <ion-label>
             <ion-text color="dark"
-            style="font-size: 0.8rem; font-family: system-ui; font-weight: 800; text-transform: uppercase;">
+            style="font-size: 0.8rem; color: white; font-family: system-ui; font-weight: 800; text-transform: uppercase;">
             Calificación</ion-text>
             <p>
               <ion-text color="dark"
-              style="font-size: 0.8rem; font-family: system-ui; font-weight: 450;">
+              style="font-size: 0.8rem; color: white; font-family: system-ui; font-weight: 450;">
               4.8 de 5</ion-text>
             </p>
           </ion-label>
@@ -78,30 +79,22 @@
   <ion-grid *ngIf="segmentValue === '2'">
     <ion-row>
       <ion-col size="12">
-        <ion-item lines="none" color="green" [routerLink]="['../details', idServicio]">
-          <ion-icon name="car-sport-sharp" slot="start" color="white"></ion-icon>
-          <ion-label>
-            <ion-text color="dark"
-            style="font-size: 0.9rem; font-family: system-ui; font-weight: 800; text-transform: uppercase;">
-            Obtener la ruta más óptima
-            </ion-text>
-          </ion-label>
+        <ion-item style="font-family: system-ui; font-weight: 650; font-size: 18.2px; color: white; margin-top: 5%;">
+          <ion-icon style="color: white; font-size: 35px;" name="logo-facebook"></ion-icon>
+          Hotel Mario's
         </ion-item>
-      </ion-col>
-    </ion-row>
-    <br>
-    <ion-row>
-      <ion-col size="12">
-        <ion-label>
-          <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description">
-            <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description" style="font-weight: 650; text-transform: uppercase;">
-            Recomendaciones <br><br>
-            </ion-text>
-          1. Al momento de llegar por favor, guardar su basura y botar en lugares apropiados.<br><br>
-          2. No rayar las infraestructuras. <br><br>
-          3. Llevar su propia agua mineral en botella.
-          </ion-text>
-        </ion-label>
+        <ion-item style="font-family: system-ui; font-weight: 650; font-size: 18.2px; color: white; margin-top: 5%;">
+          <ion-icon style="color: white; font-size: 35px;" name="logo-instagram"></ion-icon>
+          @hotelmarios_oficial
+        </ion-item>
+        <ion-item style="font-family: system-ui; font-weight: 650; font-size: 18.2px; color: white; margin-top: 5%;">
+          <ion-icon style="color: white; font-size: 35px;" name="logo-whatsapp"></ion-icon>
+          +51(93985241)
+        </ion-item>
+        <ion-item style="font-family: system-ui; font-weight: 650; font-size: 18.2px; color: white; margin-top: 5%;">
+          <ion-icon style="color: white; font-size: 35px;" name="mail"></ion-icon>
+          hotelmarios@soporte.com
+        </ion-item>
       </ion-col>
     </ion-row>
 

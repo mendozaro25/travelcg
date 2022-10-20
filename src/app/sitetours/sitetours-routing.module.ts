@@ -11,7 +11,8 @@ const routes: Routes = [
   {
     path: ':idSitio',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
-  },
+  }
+
 ];
 
 @NgModule({

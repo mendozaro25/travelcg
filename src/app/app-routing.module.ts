@@ -40,6 +40,11 @@ const routes: Routes = [
     canActivate: [IngresadoGuard]
   },
   {
+    path: 'list-favorite-sites',
+    loadChildren: () => import('./list-favorite-sites/list-favorite-sites.module').then( m => m.ListFavoriteSitesPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: ':rutas',
     loadChildren: () => import('./routesmap/routesmap.module').then( m => m.RoutesmapPageModule),
     canActivate: [IngresadoGuard]

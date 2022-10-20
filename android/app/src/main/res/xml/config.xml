@@ -10,6 +10,11 @@
     <param name="android-package" value="com.silkimen.cordovahttp.CordovaHttpPlugin"/>
   </feature>
 
+  <feature name="FirebasePlugin">
+    <param name="android-package" value="org.apache.cordova.firebase.FirebasePlugin"/>
+    <param name="onload" value="true"/>
+  </feature>
+
   <feature name="Geolocation">
     <param name="android-package" value="org.apache.cordova.geolocation.Geolocation"/>
   </feature>

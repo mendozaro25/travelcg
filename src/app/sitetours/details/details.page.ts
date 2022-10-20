@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { CrudCotizacionesService } from 'src/app/favorite/crud-favorite.service';
+import { FavoritePage } from 'src/app/favorite/favorite.page';
+import { FavoriteService } from 'src/app/favorite/favorite.service';
 import { SitetoursService } from '../sitetours.service';
 
 @Component({
@@ -23,7 +26,9 @@ export class DetailsPage implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService,
-    private toastController: ToastController
+    private toastController: ToastController,
+    private favoriteService: FavoriteService,
+    private crud: CrudCotizacionesService
     ){
       this.activatedRoute.paramMap.subscribe(p => {
         this.idSitio = p.get('idSitio');
@@ -50,15 +55,25 @@ export class DetailsPage implements OnInit {
       );
     }
 
-    async likeSite(){
+    async addSiteToFavorite() {
+      const datos = [
+        {
+          idSitio: this.idSitio,
+          nombreSitio: this.nombre,
+          ubicacionSitio: this.ubicacion,
+          imagenSitio: this.imagen
+        }
+      ];
+      await this.crud.addData(datos);
       const toast = await this.toastController.create({
-        message: 'Agregado a tus sitios favoritos...',
+        message: 'Agregado a tus sitios favoritos',
         duration: 3000,
-        icon: 'heart-sharp',
-        color: 'success',
-        position: 'top'
+        icon: 'checkmark-circle-sharp',
+        color: 'primary',
+        position: 'bottom'
       });
       toast.present();
+      console.log('Sites add to Favorite', datos);
     }
 
     segmentChanged(event){

@@ -7,7 +7,7 @@
           <ion-icon name="chevron-back-outline"></ion-icon>
         </ion-fab-button>
       </ion-buttons>
-      <ion-buttons slot="end" (click)="likeSite()">
+      <ion-buttons slot="end" (click)="addSiteToFavorite()">
         <ion-fab-button size="small" color="primary">
           <ion-icon name="heart-outline"></ion-icon>
         </ion-fab-button>
@@ -70,7 +70,7 @@
     </ion-row>
 
     <ion-row>
-      <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description">
+      <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description" style="font-size: 17.3px;">
         {{descripcion}}
       </ion-text>
     </ion-row>
@@ -90,24 +90,25 @@
         </ion-item>
       </ion-col>
     </ion-row>
-    <br>
+
     <ion-row>
       <ion-col size="12">
-        <ion-label>
-          <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description">
-            <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description" style="font-weight: 650; text-transform: uppercase;">
-            Recomendaciones <br><br>
-            </ion-text>
-          1. Al momento de llegar por favor, guardar su basura y botar en lugares apropiados.<br><br>
-          2. No rayar las infraestructuras. <br><br>
-          3. Llevar su propia agua mineral en botella.
-          </ion-text>
-        </ion-label>
+        <ion-item style="margin-top: 2%;">
+          <ion-icon name="walk" style="font-weight: 800; color: green; font-size: 50px;"></ion-icon>
+          <ion-text style="font-weight: 600; font-family: system-ui;">Al momento de llegar por favor, guardar su basura y botar en lugares apropiados.</ion-text>
+        </ion-item>
+        <ion-item style="margin-top: 5%;">
+          <ion-icon name="ban" style="font-weight: 800; color: green; font-size: 40px;"></ion-icon>
+          <ion-text style="font-weight: 600; font-family: system-ui;">No rayar en ningun espacio de las infraestructuras del sitio turistico.</ion-text>
+        </ion-item>
+        <ion-item style="margin-top: 5%;">
+          <ion-icon name="water" style="font-weight: 800; color: green; font-size: 40px;"></ion-icon>
+          <ion-text style="font-weight: 600; font-family: system-ui;">Llevar su propia agua mineral (de preferencia alguna botella recicable).</ion-text>
+        </ion-item>
       </ion-col>
     </ion-row>
 
   </ion-grid>
-
 </ion-content>
 
 <ion-footer class="ion-no-border ion-padding">
