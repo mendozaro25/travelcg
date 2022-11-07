@@ -1,0 +1,6 @@
+projectKey=App-Travel-CG
+serverUrl=http://localhost:9000
+serverVersion=9.7.1.62043
+dashboardUrl=http://localhost:9000/dashboard?id=App-Travel-CG
+ceTaskId=AYRT2UdVatMIySbupUpr
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYRT2UdVatMIySbupUpr

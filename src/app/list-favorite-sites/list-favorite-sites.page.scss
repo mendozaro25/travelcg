@@ -21,7 +21,7 @@
     font-weight: bolder;
     letter-spacing: 0.5px;
     color: #fff;
-    font-family: 'Segoe UI';
+    font-family: system-ui;
   }
 }
 
@@ -109,14 +109,6 @@ ion-content{
                 color: white;
             }
         }
-    }
-
-    .number{
-        font-weight: 800;
-        font-family: system-ui;
-        letter-spacing: 0.5px;
-        font-size: medium;
-        margin-left: 40.3%;
     }
 
     h3{

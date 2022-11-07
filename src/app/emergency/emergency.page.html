@@ -23,7 +23,7 @@
   </div>
 
       <ion-card *ngFor="let e of emergencias | filter: searchTerm" style="margin-bottom: 5%;">
-        <img style="height: 250px; width: 500px;" src="{{e.url}}" />
+        <img style="height: 250px; width: 500px;" src="{{e.url}}" alt="emergencia-logo"/>
         <ion-card-header style="background-color: green;">
           <ion-card-subtitle style="font-family: system-ui; font-weight: 600; color: white;">{{e.ubicacion}}</ion-card-subtitle>
           <ion-card-title style="font-family: system-ui; font-weight: 700; color: white; font-size: 25px;">{{e.titulo}}</ion-card-title>

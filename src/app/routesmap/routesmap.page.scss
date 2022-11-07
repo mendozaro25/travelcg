@@ -21,7 +21,7 @@
     font-weight: bolder;
     letter-spacing: 0.5px;
     color: #fff;
-    font-family: 'Segoe UI';
+    font-family: system-ui;
   }
 }
 
@@ -129,14 +129,14 @@
       margin-bottom: 11px;
       font-weight: 775;
       font-size: 1rem;
-      font-family: 'Segoe UI';
+      font-family: system-ui;
     }
     p{
       display: flex;
       color: #fff;
       font-size: 0.7rem;
       font-weight: 150;
-      font-family: 'Segoe UI';
+      font-family: system-ui;
       .icon-location{
         font-size: 0.7rem;
         font-weight: 150;
@@ -182,6 +182,16 @@
 }
 
 ion-content {
+  --ion-background-color: linear-gradient(to right, #d5dcd2, #d5dcd2);
+  ion-menu{
+    --ion-background-color: black;
+    ion-header{
+      --ion-background-color: black;
+    }
+  }
+  ion-footer{
+    background-color: black;
+  }
   #map {
     width: 100%;
     height: 43%;
@@ -205,18 +215,5 @@ ion-content {
     width: 100%;
     overflow-y: auto;
     display: block;
-  }
-}
-
-ion-content{
-  --ion-background-color: linear-gradient(to right, #678a5b, #678a5b);
-  ion-menu{
-    --ion-background-color: black;
-    ion-header{
-      --ion-background-color: black;
-    }
-  }
-  ion-footer{
-    background-color: black;
   }
 }

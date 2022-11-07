@@ -18,7 +18,7 @@
       <ion-item-sliding>
         <ion-item>
           <ion-card  button [routerLink]="['../service', item[0].idServicio]">
-            <img style="height: 250px; width: 500px;" [src]="item[0].imagenServicio"/>
+            <img style="height: 250px; width: 500px;" [src]="item[0].imagenServicio" alt="logo-servicio"/>
             <ion-card-header style="background-color: green;">
               <ion-card-subtitle style="font-family: system-ui; font-weight: 600; color: white;">{{item[0].ubicacionServicio}}</ion-card-subtitle>
               <ion-card-title style="font-family: system-ui; font-weight: 700; color: white; font-size: 25px;">{{item[0].nombreServicio}}</ion-card-title>
