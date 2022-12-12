@@ -57,6 +57,10 @@ export class WelcomeService {
     });
   }
 
+  deleteUser(){
+    this.angularFireAuth.currentUser.then( user => user?.delete());
+  }
+
   signoutUser() {
     return new Promise<void>((resolve, reject) => {
       if (this.angularFireAuth.currentUser) {

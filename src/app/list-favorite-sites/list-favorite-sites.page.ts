@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ToastController } from '@ionic/angular';
+import { AlertController } from '@ionic/angular';
 import { CrudCotizacionesService } from '../favorite/crud-favorite.service';
 
 @Component({

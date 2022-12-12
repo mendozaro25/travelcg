@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WelcomeService } from '../welcome/welcome.service';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 import { SitetoursService } from '../sitetours/sitetours.service';
 import { ServiceService } from '../service/service.service';
 import { CrudCotizacionesService } from '../favorite/crud-favorite.service';
@@ -31,7 +31,8 @@ export class ProfilePage implements OnInit {
     private crud: CrudCotizacionesService,
     private crudService: CurdFavoritesService,
     private servicioTuristicos: SitetoursService,
-    private servicio: ServiceService
+    private servicio: ServiceService,
+    private alertCtrl: AlertController
   ) { }
 
   ngOnInit() {
@@ -96,6 +97,38 @@ export class ProfilePage implements OnInit {
     }, (error: any) => {
       console.log('Error', error);
     });
+  }
+
+  async removeUser(){
+
+    const alert = await this.alertCtrl.create({
+      header: 'Eliminar',
+      message: '¿Estás seguro que deseas elimiar tu cuenta?',
+      buttons: [
+        {
+        text: 'Si',
+        handler: ()=> this.deleteUserFirebase(),
+        },
+        {
+        text: 'No',
+        },
+      ],
+    });
+    alert.present();
+
+  }
+
+  async deleteUserFirebase() {
+    this.welcomeService.deleteUser();
+    localStorage.removeItem('ingresado');
+    this.router.navigateByUrl('welcome');
+    const toast = await this.toastController.create({
+      message: '¡TU CUENTA FUE ELIMINADA!',
+      duration: 4000,
+      icon: 'hand-left-sharp',
+      color: 'danger',
+    });
+    toast.present();
   }
 
   signOut() {
