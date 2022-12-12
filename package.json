@@ -39,7 +39,6 @@
     "@ionic/storage-angular": "^3.0.6",
     "call-number": "^1.0.1",
     "cordova-plugin-advanced-http": "^3.3.1",
-    "cordova-plugin-firebase": "^2.0.5",
     "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-googleplus": "^8.5.2",
     "cordova-sqlite-storage": "^6.0.0",
