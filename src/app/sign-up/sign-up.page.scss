@@ -1,6 +1,5 @@
 ion-content {
-  --background: url("../../../assets/image/slideImage-01.jpg") no-repeat center
-    center/cover;
+  --background: url("../../assets/image/slideImage-01.jpg") no-repeat center center/cover;
   ion-header {
     ion-toolbar {
       --background: transparent;
@@ -14,7 +13,8 @@ ion-content {
       width: 13vh;
       margin-bottom: 2%;
     }
-    ion-label, p {
+    ion-label,
+    p {
       font-size: 1em;
       font-weight: bold;
       color: white;

@@ -4,11 +4,8 @@ import { ActivatedRoute} from '@angular/router';
 import { SitetoursService } from '../sitetours/sitetours.service';
 import { WelcomeService } from '../welcome/welcome.service';
 import { Geolocation } from '@awesome-cordova-plugins/geolocation/ngx';
-import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
 
 declare let google;
-
-
 @Component({
   selector: 'app-routesmap',
   templateUrl: './routesmap.page.html',

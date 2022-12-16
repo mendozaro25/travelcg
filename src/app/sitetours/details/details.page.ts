@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute} from '@angular/router';
+import { ActivatedRoute, Router} from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { CrudCotizacionesService } from 'src/app/favorite/crud-favorite.service';
+import { WelcomeService } from 'src/app/welcome/welcome.service';
 import { SitetoursService } from '../sitetours.service';
-
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
@@ -12,6 +12,8 @@ import { SitetoursService } from '../sitetours.service';
 export class DetailsPage implements OnInit {
 
   segmentValue = '1';
+
+  userDetail: string;
 
   idSitio: any;
 
@@ -25,7 +27,9 @@ export class DetailsPage implements OnInit {
     private activatedRoute: ActivatedRoute,
     private servicio: SitetoursService,
     private toastController: ToastController,
-    private crud: CrudCotizacionesService
+    private crud: CrudCotizacionesService,
+    private welcomeService: WelcomeService,
+    private router: Router
     ){
       this.activatedRoute.paramMap.subscribe(p => {
         this.idSitio = p.get('idSitio');
@@ -35,6 +39,18 @@ export class DetailsPage implements OnInit {
     }
 
     ngOnInit() {
+    }
+
+    usuario(){
+      this.welcomeService.userDetails().subscribe(response => {
+        if (response !== null) {
+          this.userDetail = response.email;
+        } else {
+          this.router.navigateByUrl('');
+        }
+      }, error => {
+        console.log(error);
+      });
     }
 
     getSitio(idSitio){
@@ -78,4 +94,3 @@ export class DetailsPage implements OnInit {
       this.segmentValue = event.detail.value;
     }
 }
-

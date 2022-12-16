@@ -89,6 +89,8 @@ export class HomePage implements OnInit, AfterContentChecked {
     }, (error: any) => {
       console.log('Error', error);
     });
+
+    this.ngOnInit();
   }
 
 }

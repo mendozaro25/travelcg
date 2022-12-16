@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SitetoursService } from './sitetours.service';
-
 @Component({
   selector: 'app-sitetours',
   templateUrl: './sitetours.page.html',
@@ -9,9 +8,7 @@ import { SitetoursService } from './sitetours.service';
 export class SitetoursPage implements OnInit {
 
   searchTerm: string;
-
   sitios: any = [];
-
 
   // eslint-disable-next-line @typescript-eslint/naming-convention
   constructor(private Servicio: SitetoursService) {
@@ -19,7 +16,6 @@ export class SitetoursPage implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   getSitios(){

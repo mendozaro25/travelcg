@@ -15,6 +15,16 @@ const routes: Routes = [
     canActivate: [NoIngresadoGuard]
   },
   {
+    path: 'sign-in',
+    loadChildren: () => import('./sign-in/sign-in.module').then( m => m.SignInPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
+    path: 'sign-up',
+    loadChildren: () => import('./sign-up/sign-up.module').then( m => m.SignUpPageModule),
+    canActivate: [IngresadoGuard]
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule),
     canActivate: [IngresadoGuard]
@@ -46,7 +56,8 @@ const routes: Routes = [
   },
   {
     path: 'list-page-services',
-    loadChildren: () => import('./list-page-services/list-page-services.module').then( m => m.ListPageServicesPageModule)
+    loadChildren: () => import('./list-page-services/list-page-services.module').then( m => m.ListPageServicesPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: ':rutas',

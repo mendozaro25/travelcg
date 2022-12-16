@@ -30,7 +30,8 @@
           >
             Travel Cg
           </ion-list-header>
-          <ion-list-header
+
+          <ion-list-header *ngIf="!userDetail"
             style="
               font-size: 20px;
               color: white;
@@ -38,7 +39,17 @@
               font-weight: 350;
             "
           >
-            Hola, {{ userDetail }}</ion-list-header
+            Usuario invitado</ion-list-header
+          >
+          <ion-list-header *ngIf="userDetail"
+            style="
+              font-size: 20px;
+              color: white;
+              font-family: system-ui;
+              font-weight: 350;
+            "
+          >
+            Hola, {{userDetail}}</ion-list-header
           >
           <br />
           <ion-menu-toggle auto-hide="false">

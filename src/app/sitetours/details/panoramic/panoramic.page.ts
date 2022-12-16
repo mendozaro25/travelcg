@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { SitetoursService } from '../../sitetours.service';
-
 import { DomSanitizer, SafeResourceUrl} from '@angular/platform-browser';
-
-
 @Component({
   selector: 'app-panoramic',
   templateUrl: './panoramic.page.html',

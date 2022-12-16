@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
 
 @Component({
@@ -14,13 +15,15 @@ export class WelcomePage implements OnInit {
 
   slideImages: any[] = [];
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.slideImages = [
-      'assets/image/slideImage-01.jpg',
-      'assets/image/slideImage-02.jpg',
-      'assets/image/slideImage-03.jpg'
+      'assets/image/1.png',
+      'assets/image/2.png',
+      'assets/image/3.png'
     ];
     this.slideOpts = {
       on: {
@@ -82,6 +85,11 @@ export class WelcomePage implements OnInit {
         },
       }
     };
+  }
+
+  signInvite(){
+    localStorage.setItem('ingresado', 'true');
+        this.router.navigateByUrl('home');
   }
 
   ionViewDidEnter(){

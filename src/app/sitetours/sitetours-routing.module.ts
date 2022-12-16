@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { SitetoursPage } from './sitetours.page';
 
 const routes: Routes = [
@@ -12,9 +11,7 @@ const routes: Routes = [
     path: ':idSitio',
     loadChildren: () => import('./details/details.module').then( m => m.DetailsPageModule)
   }
-
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

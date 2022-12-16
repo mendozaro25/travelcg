@@ -1,6 +1,16 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-title style="font-weight: 800; text-align: center; color: rgb(255, 255, 255); font-family: system-ui; font-size: 17px; text-transform: uppercase;">Mi Cuenta</ion-title>
+    <ion-title
+      style="
+        font-weight: 800;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-family: system-ui;
+        font-size: 17px;
+        text-transform: uppercase;
+      "
+      >Mi Cuenta</ion-title
+    >
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home" text=""></ion-back-button>
     </ion-buttons>
@@ -9,18 +19,19 @@
 
 <ion-content fullscreen="true">
   <div class="main_content_div">
-
     <div class="user_div">
-
       <div class="first_div">
-        <ion-label class="email">{{email}}</ion-label>
+        <ion-label class="email" *ngIf="!email">Usuario Invitado</ion-label>
+        <ion-label class="email" *ngIf="email">Hola, {{email}}</ion-label>
       </div>
 
-      <div class="user_back" [style.backgroundImage]="'url(../../assets/icon/logo-travelcg.png)'"></div>
-
+      <div
+        class="user_back"
+        [style.backgroundImage]="'url(../../assets/icon/logo-travelcg.png)'"
+      ></div>
     </div>
 
-    <div class="content_div">
+    <div *ngIf="email" class="content_div">
       <div class="test_details">
         <ion-grid fixed>
           <ion-row>
@@ -65,16 +76,27 @@
 
             <ion-col size="6">
               <div class="flex_div">
-                <div class="round_div" style="background-color: red;" (click)="removeUser()">
-                  <ion-icon class="icono" name="trash-outline" color="light"></ion-icon>
+                <div
+                  class="round_div"
+                  style="background-color: red"
+                  (click)="removeUser()"
+                >
+                  <ion-icon
+                    class="icono"
+                    name="trash-outline"
+                    color="light"
+                  ></ion-icon>
                 </div>
 
                 <div class="details">
-                  <ion-label class="bold_lbl" style="color: red; font-weight: 700;">Eliminar cuenta</ion-label>
+                  <ion-label
+                    class="bold_lbl"
+                    style="color: red; font-weight: 700"
+                    >Eliminar cuenta</ion-label
+                  >
                 </div>
               </div>
             </ion-col>
-
           </ion-row>
         </ion-grid>
       </div>
@@ -104,21 +126,128 @@
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
 
-      <div class="list_div"  (click)="signOut()">
+      <div class="list_div" (click)="signOut()">
         <ion-label>Salir</ion-label>
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </div>
+    </div>
 
+    <div *ngIf="!email" class="content_div">
+      <div class="test_details">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <ion-icon class="icono" name="airplane"></ion-icon>
+                </div>
+
+                <div class="details">
+                  <ion-label class="bold_lbl">{{sitios.length}}</ion-label>
+                  <ion-label class="small_lbl">Sitios Turisticos</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div">
+                <div class="round_div">
+                  <ion-icon class="icono" name="heart"></ion-icon>
+                </div>
+
+                <div class="details">
+                  <ion-label class="bold_lbl">{{servicesFav.length}}</ion-label>
+                  <ion-label class="small_lbl">Servicios Favoritos</ion-label>
+                </div>
+              </div>
+            </ion-col>
+
+            <ion-col size="12">
+              <div class="flex_div">
+                <div class="round_div">
+                  <ion-icon class="icono" name="heart"></ion-icon>
+                </div>
+
+                <div class="details">
+                  <ion-label class="bold_lbl">{{sitiosfav.length}}</ion-label>
+                  <ion-label class="small_lbl">Sitios Favoritos</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div" button [routerLink]="['../sign-in']">
+                <div class="round_div" style="background-color: red">
+                  <ion-icon class="icono" name="person-sharp"></ion-icon>
+                </div>
+
+                <div class="details">
+                  <ion-label class="bold_lbl2" style="color: red; font-weight: 700">Inicia Sesión</ion-label>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="flex_div" button [routerLink]="['../sign-up']">
+                <div class="round_div" style="background-color: red">
+                  <ion-icon class="icono" name="person-add-sharp"></ion-icon>
+                </div>
+
+                <div class="details">
+                  <ion-label class="bold_lbl2" style="color: red;">Registrate</ion-label>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../sitetours']">
+        <ion-label>Lista de Sitios</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../service']">
+        <ion-label>Lista de Servicios</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../list-favorite-sites']">
+        <ion-label>Mis Sitios Favoritos</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../list-page-services']">
+        <ion-label>Mis Servicios Favoritos</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" button [routerLink]="['../emergency']">
+        <ion-label>Numeros de Emergencias</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+
+      <div class="list_div" (click)="signOut()">
+        <ion-label>Salir</ion-label>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
     </div>
   </div>
 </ion-content>
 
 <ion-footer>
   <div class="tabs">
-    <div class="tab-icon" button [routerLink]="['../sitetours']" ><ion-icon class="icon-tabs" name="airplane"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../service']" ><ion-icon class="icon-tabs" name="book"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../home']"><ion-icon class="icon-tabs" name="home"></ion-icon></div>
-    <div class="tab-icon" button [routerLink]="['../emergency']" ><ion-icon class="icon-tabs" name="megaphone"></ion-icon></div>
-    <div class="tab-icon active" button [routerLink]="['../profile']"><ion-icon class="icon-tabs-active" name="person"></ion-icon></div>
+    <div class="tab-icon" button [routerLink]="['../sitetours']">
+      <ion-icon class="icon-tabs" name="airplane"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../service']">
+      <ion-icon class="icon-tabs" name="book"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../home']">
+      <ion-icon class="icon-tabs" name="home"></ion-icon>
+    </div>
+    <div class="tab-icon" button [routerLink]="['../emergency']">
+      <ion-icon class="icon-tabs" name="megaphone"></ion-icon>
+    </div>
+    <div class="tab-icon active" button [routerLink]="['../profile']">
+      <ion-icon class="icon-tabs-active" name="person"></ion-icon>
+    </div>
   </div>
 </ion-footer>
